@@ -1,0 +1,12 @@
+<template name="findingEdit">
+  <form name="finding" class="finding-form form">
+    <div class="form-group {{errorClass 'body'}}">
+      <div class="controls">
+        <label for="body">Edit finding</label>
+        <textarea name="body" id="body" class="form-control" rows="3" value="{{body}}">{{body}}</textarea>
+        <span class="help-block">{{errorMessage 'body'}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary submit">Submit finding</button>
+  </form>
+</template>

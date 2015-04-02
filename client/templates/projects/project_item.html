@@ -1,0 +1,16 @@
+<template name="projectItem">
+  <div class="project bg-info">
+    <div class="project-content">
+      <h3>{{title}} <span>{{description}}</span></h3>
+      <p>
+        {{sourcesCount}} sources, {{findingsCount}} findings.
+      </p>
+      {{> submittedAuthorDate}}
+    </div>
+    {{#if projectItemIsOpen}}
+      {{#if ownProject}}<a href="{{pathFor 'projectEdit'}}" class="discuss btn btn-default">Edit</a>{{/if}}
+    {{else}}
+      <a href="{{pathFor 'projectPage'}}" class="discuss btn btn-default">Open</a>
+    {{/if}}
+  </div>
+</template>

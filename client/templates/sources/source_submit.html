@@ -1,0 +1,12 @@
+<template name="sourceSubmit">
+  <form name="source" class="source-form form">
+    <div class="form-group {{errorClass 'body'}}">
+        <div class="controls">
+            <label for="body">Add source to this project</label>
+            <textarea name="body" id="body" class="form-control" rows="3"></textarea>
+            <span class="help-block">{{errorMessage 'body'}}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add source</button>
+  </form>
+</template>

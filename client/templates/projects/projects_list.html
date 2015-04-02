@@ -1,0 +1,7 @@
+<template name="projectsList">
+  <div class="projects">
+    {{#each projects}}
+      {{> projectItem extendContext 'projectItemIsOpen' false}}
+    {{/each}}
+  </div>
+</template>
