@@ -36,5 +36,16 @@ Template.findingEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  },
+
+  'click .delete': function(e) {
+    e.preventDefault();
+
+    if (confirm("Delete this finding?")) {
+      var projectId = this.projectId;
+      Projects.update(projectId, {$inc: {findingsCount: -1}});
+      Findings.remove(this._id);
+      Router.go('projectPage', {_id: projectId});
+    }
   }
 });

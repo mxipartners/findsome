@@ -7,10 +7,14 @@
       </p>
       {{> submittedAuthorDate}}
     </div>
-    {{#if projectItemIsOpen}}
-      {{#if ownProject}}<a href="{{pathFor 'projectEdit'}}" class="discuss btn btn-default">Edit</a>{{/if}}
-    {{else}}
-      <a href="{{pathFor 'projectPage'}}" class="discuss btn btn-default">Open</a>
+    {{#if currentUser}}
+      {{#if projectItemIsOpen}}
+        {{#if ownProject}}
+          <a href="{{pathFor 'projectEdit'}}" class="discuss btn btn-default">Edit</a>
+        {{/if}}
+      {{else}}
+        <a href="{{pathFor 'projectPage'}}" class="discuss btn btn-default">Open</a>
+      {{/if}}
     {{/if}}
   </div>
 </template>
