@@ -36,5 +36,16 @@ Template.sourceEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  },
+
+  'click .delete': function(e) {
+    e.preventDefault();
+
+    if (confirm("Delete this source?")) {
+      var projectId = this.projectId;
+      Projects.update(projectId, {$inc: {sourcesCount: -1}});
+      Sources.remove(this._id);
+      Router.go('projectPage', {_id: projectId});
+    }
   }
 });
