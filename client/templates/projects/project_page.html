@@ -14,18 +14,22 @@
           <p>Please log in to add sources.</p>
         {{/if}}
       </div>
-      <div class="col-md-6 col-lg-6">
-        <ul class="findings">
-          {{#each findings}}
-            {{> findingItem}}
-          {{/each}}
-        </ul>
-        {{#if currentUser}}
-          {{> findingSubmit}}
-        {{else}}
-          <p>Please log in to add findings.</p>
-        {{/if}}
-      </div>
+      {{#if has_sources}}
+        <div class="col-md-6 col-lg-6">
+          <ul class="findings">
+            {{#each findings}}
+              {{> findingItem}}
+            {{/each}}
+          </ul>
+          {{#if currentUser}}
+            {{> findingSubmit}}
+          {{else}}
+            <p>Please log in to add findings.</p>
+          {{/if}}
+        </div>
+      {{else}}
+        <p>You need to add sources before you can add findings.</p>
+      {{/if}}
     </div>
   </div>
 </template>
