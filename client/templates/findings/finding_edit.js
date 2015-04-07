@@ -8,6 +8,16 @@ Template.findingEdit.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('findingEditErrors')[field] ? 'has-error' : '';
+  },
+  sources: function() {
+    return Sources.find();
+  }
+});
+
+Template.selectedSourceOption.helpers({
+  sourceIsSelected: function() {
+    var finding = Template.parentData();
+    return finding.sources.indexOf(this._id) > -1;
   }
 });
 
@@ -19,15 +29,15 @@ Template.findingEdit.events({
     var projectId = this.projectId;
 
     var $body = $(e.target).find('[name=body]');
+    var $sources = $(e.target).find('[name=sources]');
     var findingProperties = {
       body: $body.val(),
+      sources: $sources.val(),
     };
 
-    var errors = {};
-    if (! findingProperties.body) {
-      errors.body = "Please write some content";
-      return Session.set('findingEditErrors', errors);
-    }
+    var errors = validateFinding(finding);
+    if (errors.body || errors.sources)
+      return Session.set('findingSubmitErrors', errors);
 
     Findings.update(currentFindingId, {$set: findingProperties}, function(error) {
       if (error) {

@@ -8,6 +8,9 @@ Template.findingSubmit.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('findingSubmitErrors')[field] ? 'has-error' : '';
+  },
+  sources: function() {
+    return Sources.find();
   }
 });
 
@@ -16,22 +19,23 @@ Template.findingSubmit.events({
     e.preventDefault();
 
     var $body = $(e.target).find('[name=body]');
+    var $sources = $(e.target).find('[name=sources]');
     var finding = {
       body: $body.val(),
+      sources: $sources.val(),
       projectId: template.data._id
     };
 
-    var errors = {};
-    if (! finding.body) {
-      errors.body = "Please write some content";
+    var errors = validateFinding(finding);
+    if (errors.body || errors.sources)
       return Session.set('findingSubmitErrors', errors);
-    }
 
     Meteor.call('findingInsert', finding, function(error, findingId) {
       if (error){
         throwError(error.reason);
       } else {
         $body.val('');
+        Session.set('findingSubmitErrors', {})
       }
     });
   }

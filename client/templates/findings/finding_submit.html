@@ -1,12 +1,27 @@
 <template name="findingSubmit">
   <form name="finding" class="finding-form form">
     <div class="form-group {{errorClass 'body'}}">
-        <div class="controls">
-            <label for="body">Add finding to this project</label>
-            <textarea name="body" id="body" class="form-control" rows="3"></textarea>
-            <span class="help-block">{{errorMessage 'body'}}</span>
-        </div>
+      <div class="controls">
+        <label for="body">Add finding to this project</label>
+        <textarea name="body" id="body" class="form-control" rows="3"></textarea>
+        <span class="help-block">{{errorMessage 'body'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'sources'}}">
+      <div class="controls">
+        <label for="sources">Sources</label>
+        <select name="sources" size="3" multiple="multiple" tabindex="1" class="form-control">
+          {{#each sources}}
+            {{> sourceOption}}
+          {{/each}}
+        </select>
+        <span class="help-block">{{errorMessage 'sources'}}</span>
+      </div>
     </div>
     <button type="submit" class="btn btn-primary">Add finding</button>
   </form>
+</template>
+
+<template name="sourceOption">
+    <option value="{{_id}}">{{body}}</option>
 </template>
