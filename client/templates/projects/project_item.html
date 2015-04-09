@@ -3,7 +3,7 @@
     <div class="project-content">
       <h3>{{title}} <span>{{description}}</span></h3>
       <p>
-        {{sourcesCount}} sources, {{findingsCount}} findings.
+        {{pluralize sourcesCount "source"}}, {{pluralize findingsCount "finding"}}.
       </p>
       {{> submittedAuthorDate}}
     </div>
