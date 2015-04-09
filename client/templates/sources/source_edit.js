@@ -8,6 +8,9 @@ Template.sourceEdit.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('sourceEditErrors')[field] ? 'has-error' : '';
+  },
+  hasNoFindings: function() {
+    return Findings.find({sources: this._id}).count() == 0;
   }
 });
 
