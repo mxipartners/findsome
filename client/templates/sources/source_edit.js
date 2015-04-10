@@ -39,16 +39,17 @@ Template.sourceEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
-  },
+  }
+});
 
+Template.deleteSource.events({
   'click .delete': function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this source?")) {
-      var projectId = this.projectId;
-      Projects.update(projectId, {$inc: {sourcesCount: -1}});
-      Sources.remove(this._id);
+    var projectId = this.projectId;
+    Projects.update(projectId, {$inc: {sourcesCount: -1}});
+    Sources.remove(this._id);
+    // Make sure the backdrop is hidden before we go to the project page.
+    $('#deleteSource').on('hidden.bs.modal', function() {
       Router.go('projectPage', {_id: projectId});
-    }
+    }).modal('hide');
   }
 });

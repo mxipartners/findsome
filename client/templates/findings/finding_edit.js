@@ -43,16 +43,17 @@ Template.findingEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
-  },
+  }
+});
 
+Template.deleteFinding.events({
   'click .delete': function(e) {
-    e.preventDefault();
-
-    if (confirm("Delete this finding?")) {
-      var projectId = this.projectId;
-      Projects.update(projectId, {$inc: {findingsCount: -1}});
-      Findings.remove(this._id);
+    var projectId = this.projectId;
+    Projects.update(projectId, {$inc: {findingsCount: -1}});
+    Findings.remove(this._id);
+    // Make sure the backdrop is hidden before we go to the project page.
+    $('#deleteFinding').on('hidden.bs.modal', function() {
       Router.go('projectPage', {_id: projectId});
-    }
+    }).modal('hide');
   }
 });

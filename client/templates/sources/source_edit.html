@@ -10,7 +10,27 @@
     <button type="submit" class="btn btn-primary submit">Submit source</button>
     {{#if hasNoFindings}}
       <hr/>
-      <a class="btn btn-danger delete" href="#">Delete source</a>
+      <a data-toggle="modal" class="btn btn-danger delete" href="#deleteSource">Delete source</a>
     {{/if}}
   </form>
+  {{> deleteSource}}
+</template>
+
+<template name="deleteSource">
+  <div class="modal fade" id="deleteSource" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete {{kind}}?</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{body}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger delete" data-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

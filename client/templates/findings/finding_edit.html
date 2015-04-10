@@ -20,6 +20,26 @@
     </div>
     <button type="submit" class="btn btn-primary submit">Submit finding</button>
     <hr/>
-    <a class="btn btn-danger delete" href="#">Delete finding</a>
+    <a data-toggle="modal" class="btn btn-danger delete" href="#deleteFinding">Delete finding</a>
   </form>
+  {{>deleteFinding}}
+</template>
+
+<template name="deleteFinding">
+  <div class="modal fade" id="deleteFinding" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete {{kind}}?</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{body}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger delete" data-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
