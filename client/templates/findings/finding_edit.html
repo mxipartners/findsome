@@ -12,7 +12,7 @@
         <label for="sources">Sources</label>
         <select name="sources" size="3" multiple="multiple" tabindex="1" class="form-control">
           {{#each sources}}
-            {{> selectedSourceOption}}
+            <option selected="{{sourceIsSelected}}" value="{{_id}}">{{body}}</option>
           {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'sources'}}</span>
@@ -22,12 +22,4 @@
     <hr/>
     <a class="btn btn-danger delete" href="#">Delete finding</a>
   </form>
-</template>
-
-<template name="selectedSourceOption">
-  {{#if sourceIsSelected}}
-    <option selected="selected" value="{{_id}}">{{body}}</option>
-  {{else}}
-    <option value="{{_id}}">{{body}}</option>
-  {{/if}}
 </template>

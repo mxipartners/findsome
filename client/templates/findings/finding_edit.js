@@ -11,10 +11,7 @@ Template.findingEdit.helpers({
   },
   sources: function() {
     return Sources.find();
-  }
-});
-
-Template.selectedSourceOption.helpers({
+  },
   sourceIsSelected: function() {
     var finding = Template.parentData();
     return finding.sources.indexOf(this._id) > -1;
