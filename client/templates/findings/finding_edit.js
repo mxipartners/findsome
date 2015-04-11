@@ -25,15 +25,17 @@ Template.findingEdit.events({
     var currentFindingId = this._id;
     var projectId = this.projectId;
 
-    var $body = $(e.target).find('[name=body]');
+    var $title = $(e.target).find('[name=title]');
+    var $description = $(e.target).find('[name=description]');
     var $sources = $(e.target).find('[name=sources]');
     var findingProperties = {
-      body: $body.val(),
+      title: $title.val(),
+      description: $description.val(),
       sources: $sources.val(),
     };
 
     var errors = validateFinding(finding);
-    if (errors.body || errors.sources)
+    if (errors.title || errors.description || errors.sources)
       return Session.set('findingSubmitErrors', errors);
 
     Findings.update(currentFindingId, {$set: findingProperties}, function(error) {

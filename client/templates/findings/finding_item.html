@@ -1,7 +1,7 @@
 <template name="findingItem">
   <li>
     <div class="findings-content">
-      <p>{{body}}</p>
+      <h3>{{title}} <span>{{description}}</span></h3>
       {{> submittedAuthorDate}}
     </div>
     <a href="{{pathFor 'findingEdit'}}" class="discuss btn btn-default">Edit</a>

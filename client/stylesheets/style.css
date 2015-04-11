@@ -86,7 +86,17 @@ body {
   .findings li {
     display: block; }
     .findings li .findings-content {
-      display: inline-block; }
+      display: inline-block;
+      width: 90%; }
+      .findings li .findings-content h3 {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 18px; }
+        .findings li .findings-content h3 span {
+          font-weight: normal;
+          font-size: 14px;
+          display: inline-block;
+          color: #aaaaaa; }
     .findings li .discuss {
       display: block;
       float: right;

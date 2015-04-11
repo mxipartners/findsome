@@ -3,6 +3,7 @@
     {{> projectItem extendContext 'projectItemIsOpen' false}}
     <div class="grid-block">
       <table class="table table-striped">
+        <caption>Sources</caption>
         <thead>
           <tr>
             <th>Title</th>
@@ -21,16 +22,19 @@
     </div>
     <div class="grid-block">
       <table class="table table-striped">
+        <caption>Findings</caption>
         <thead>
           <tr>
-            <th>Findings</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>Sources</th>
           </tr>
         </thead>
         <tbody>
           {{#each findings}}
             <tr>
-              <td>{{body}}</td>
+              <td>{{title}}</td>
+              <td>{{description}}</td>
               <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
             </tr>
           {{/each}}
