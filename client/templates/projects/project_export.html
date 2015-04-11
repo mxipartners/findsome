@@ -1,0 +1,39 @@
+<template name="projectExport">
+  <div class="project-page page">
+    {{> projectItem extendContext 'projectItemIsOpen' false}}
+    <div class="grid-block">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Source</th>
+          </tr>
+      </thead>
+        <tbody>
+          {{#each sources}}
+            <tr>
+              <td>{{body}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-block">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Findings</th>
+            <th>Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each findings}}
+            <tr>
+              <td>{{body}}</td>
+              <td>{{#each findingSources}}{{body}}<br>{{/each}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

@@ -10,6 +10,7 @@
     {{#if currentUser}}
       {{#if projectItemIsOpen}}
         {{#if ownProject}}
+          <a href="{{pathFor 'projectExport'}}" class="discuss btn btn-default">Export</a>
           <a href="{{pathFor 'projectEdit'}}" class="discuss btn btn-default">Edit</a>
         {{/if}}
       {{else}}
