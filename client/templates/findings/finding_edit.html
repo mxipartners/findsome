@@ -12,7 +12,7 @@
         <label for="sources">Sources</label>
         <select name="sources" size="3" multiple="multiple" tabindex="1" class="form-control">
           {{#each sources}}
-            <option selected="{{sourceIsSelected}}" value="{{_id}}">{{body}}</option>
+            <option selected="{{sourceIsSelected}}" value="{{_id}}">{{title}}</option>
           {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'sources'}}</span>

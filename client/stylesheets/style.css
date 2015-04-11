@@ -100,7 +100,17 @@ body {
   .sources li {
     display: block; }
     .sources li .sources-content {
-      display: inline-block; }
+      display: inline-block;
+      width: 90%; }
+      .sources li .sources-content h3 {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 18px; }
+        .sources li .sources-content h3 span {
+          font-weight: normal;
+          font-size: 14px;
+          display: inline-block;
+          color: #aaaaaa; }
     .sources li .discuss {
       display: block;
       float: right;

@@ -5,13 +5,15 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Source</th>
+            <th>Title</th>
+            <th>Description</th>
           </tr>
       </thead>
         <tbody>
           {{#each sources}}
             <tr>
-              <td>{{body}}</td>
+              <td>{{title}}</td>
+              <td>{{description}}</td>
             </tr>
           {{/each}}
         </tbody>
@@ -29,7 +31,7 @@
           {{#each findings}}
             <tr>
               <td>{{body}}</td>
-              <td>{{#each findingSources}}{{body}}<br>{{/each}}</td>
+              <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
             </tr>
           {{/each}}
         </tbody>

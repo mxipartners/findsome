@@ -15,23 +15,24 @@ Template.sourceSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var $body = $(e.target).find('[name=body]');
+    var $title = $(e.target).find('[name=title]');
+    var $description = $(e.target).find('[name=description]');
     var source = {
-      body: $body.val(),
+      title: $title.val(),
+      description: $description.val(),
       projectId: template.data._id
     };
 
-    var errors = {};
-    if (! source.body) {
-      errors.body = "Please write some content";
+    var errors = validateSource(source);
+    if (errors.title || errors.description)
       return Session.set('sourceSubmitErrors', errors);
-    }
 
     Meteor.call('sourceInsert', source, function(error, sourceId) {
       if (error){
         throwError(error.reason);
       } else {
-        $body.val('');
+        $title.val('');
+        $description.val('');
       }
     });
   }

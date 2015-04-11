@@ -1,10 +1,17 @@
 <template name="sourceEdit">
   <form name="source" class="source-form form">
-    <div class="form-group {{errorClass 'body'}}">
+    <div class="form-group {{errorClass 'title'}}">
       <div class="controls">
-        <label for="body">Edit source</label>
-        <textarea name="body" id="body" class="form-control" rows="3" value="{{body}}">{{body}}</textarea>
-        <span class="help-block">{{errorMessage 'body'}}</span>
+        <label for="title">Edit title</label>
+        <input name="title" id="title" type="text" value="{{title}}" class="form-control"/>
+        <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'description'}}">
+      <div class="controls">
+        <label for="description">Edit description</label>
+        <textarea name="description" id="description" class="form-control" rows="3" value="{{description}}">{{description}}</textarea>
+        <span class="help-block">{{errorMessage 'description'}}</span>
       </div>
     </div>
     <button type="submit" class="btn btn-primary submit">Submit source</button>
@@ -24,7 +31,8 @@
           <h4 class="modal-title">Delete {{kind}}?</h4>
         </div>
         <div class="modal-body">
-          <p>{{body}}</p>
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

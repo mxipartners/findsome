@@ -21,16 +21,16 @@ Template.sourceEdit.events({
     var currentSourceId = this._id;
     var projectId = this.projectId;
 
-    var $body = $(e.target).find('[name=body]');
+    var $title = $(e.target).find('[name=title]');
+    var $description = $(e.target).find('[name=description]');
     var sourceProperties = {
-      body: $body.val(),
+      title: $title.val(),
+      description: $description.val(),
     };
 
-    var errors = {};
-    if (! sourceProperties.body) {
-      errors.body = "Please write some content";
-      return Session.set('sourceEditErrors', errors);
-    }
+    var errors = validateSource(source);
+    if (errors.title || errors.description)
+      return Session.set('sourceSubmitErrors', errors);
 
     Sources.update(currentSourceId, {$set: sourceProperties}, function(error) {
       if (error) {
