@@ -1,16 +1,3 @@
-Template.sourceSubmit.created = function() {
-  Session.set('sourceSubmitErrors', {});
-}
-
-Template.sourceSubmit.helpers({
-  errorMessage: function(field) {
-    return Session.get('sourceSubmitErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('sourceSubmitErrors')[field] ? 'has-error' : '';
-  }
-});
-
 Template.sourceSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
@@ -23,9 +10,15 @@ Template.sourceSubmit.events({
       projectId: template.data._id
     };
 
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
     var errors = validateSource(source);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
     if (errors.title || errors.description)
-      return Session.set('sourceSubmitErrors', errors);
+      return false;
 
     Meteor.call('sourceInsert', source, function(error, sourceId) {
       if (error){

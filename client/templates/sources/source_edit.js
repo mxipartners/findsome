@@ -1,14 +1,4 @@
-Template.sourceEdit.created = function() {
-  Session.set('sourceEditErrors', {});
-}
-
 Template.sourceEdit.helpers({
-  errorMessage: function(field) {
-    return Session.get('sourceEditErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('sourceEditErrors')[field] ? 'has-error' : '';
-  },
   hasNoFindings: function() {
     return Findings.find({sources: this._id}).count() == 0;
   }
@@ -25,12 +15,18 @@ Template.sourceEdit.events({
     var $description = $(e.target).find('[name=description]');
     var sourceProperties = {
       title: $title.val(),
-      description: $description.val(),
+      description: $description.val()
     };
 
-    var errors = validateSource(source);
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
+    var errors = validateSource(sourceProperties);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
     if (errors.title || errors.description)
-      return Session.set('sourceSubmitErrors', errors);
+      return false;
 
     Sources.update(currentSourceId, {$set: sourceProperties}, function(error) {
       if (error) {

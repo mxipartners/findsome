@@ -28,9 +28,18 @@ Template.findingSubmit.events({
       projectId: template.data._id
     };
 
+    Session.set('findingSubmitErrors', {});
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
     var errors = validateFinding(finding);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
+    if (errors.sources)
+      Session.set('findingSubmitErrors', errors);
     if (errors.title || errors.description || errors.sources)
-      return Session.set('findingSubmitErrors', errors);
+      return false;
 
     Meteor.call('findingInsert', finding, function(error, findingId) {
       if (error){
@@ -38,7 +47,6 @@ Template.findingSubmit.events({
       } else {
         $title.val('');
         $description.val('');
-        Session.set('findingSubmitErrors', {})
       }
     });
   }

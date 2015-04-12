@@ -34,9 +34,18 @@ Template.findingEdit.events({
       sources: $sources.val(),
     };
 
-    var errors = validateFinding(finding);
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
+    Session.set('findingEditErrors', {});
+    var errors = validateFinding(findingProperties);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
+    if (errors.sources)
+      Session.set('findingEditErrors', errors);
     if (errors.title || errors.description || errors.sources)
-      return Session.set('findingSubmitErrors', errors);
+      return false;
 
     Findings.update(currentFindingId, {$set: findingProperties}, function(error) {
       if (error) {

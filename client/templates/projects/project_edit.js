@@ -1,16 +1,3 @@
-Template.projectEdit.created = function() {
-  Session.set('projectEditErrors', {});
-}
-
-Template.projectEdit.helpers({
-  errorMessage: function(field) {
-    return Session.get('projectEditErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('projectEditErrors')[field] ? 'has-error' : '';
-  }
-});
-
 Template.projectEdit.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -22,9 +9,15 @@ Template.projectEdit.events({
       description: $(e.target).find('[name=description]').val()
     }
 
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
     var errors = validateProject(projectProperties);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
     if (errors.title || errors.description)
-      return Session.set('projectEditErrors', errors);
+      return false;
 
     Projects.update(currentProjectId, {$set: projectProperties}, function(error) {
       if (error) {

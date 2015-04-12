@@ -1,16 +1,3 @@
-Template.projectNew.created = function() {
-  Session.set('projectNewErrors', {});
-}
-
-Template.projectNew.helpers({
-  errorMessage: function(field) {
-    return Session.get('projectNewErrors')[field];
-  },
-  errorClass: function (field) {
-    return !!Session.get('projectNewErrors')[field] ? 'has-error' : '';
-  }
-});
-
 Template.projectNew.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -20,9 +7,15 @@ Template.projectNew.events({
       description: $(e.target).find('[name=description]').val()
     };
 
+    Session.set('titleErrors', {});
+    Session.set('descriptionErrors', {});
     var errors = validateProject(project);
+    if (errors.title)
+      Session.set('titleErrors', errors);
+    if (errors.description)
+      Session.set('descriptionErrors', errors);
     if (errors.title || errors.description)
-      return Session.set('projectNewErrors', errors);
+      return false;
 
     Meteor.call('projectInsert', project, function(error, result) {
       // display the error to the user and abort
@@ -33,7 +26,7 @@ Template.projectNew.events({
       if (result.projectExists)
         throwError('This project has already been created');
 
-      Router.go('projectPage', {_id: result._id});  
+      Router.go('projectPage', {_id: result._id});
     });
   }
 });
