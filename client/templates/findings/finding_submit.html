@@ -1,7 +1,7 @@
 <template name="findingSubmit">
   <form name="finding" class="finding-form form">
-    {{> titleControl title='' kind='finding'}}
-    {{> descriptionControl description=''}}
+    {{> titleControl control_id='finding_title' title='' kind='finding'}}
+    {{> descriptionControl control_id='finding_description' description=''}}
     <div class="form-group {{errorClass 'sources'}}">
       <div class="controls">
         <label for="sources">Sources</label>

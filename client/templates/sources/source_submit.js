@@ -10,13 +10,13 @@ Template.sourceSubmit.events({
       projectId: template.data._id
     };
 
-    Session.set('titleErrors', {});
-    Session.set('descriptionErrors', {});
+    Session.set('source_title', {});
+    Session.set('source_description', {});
     var errors = validateSource(source);
     if (errors.title)
-      Session.set('titleErrors', errors);
+      Session.set('source_title', errors);
     if (errors.description)
-      Session.set('descriptionErrors', errors);
+      Session.set('source_description', errors);
     if (errors.title || errors.description)
       return false;
 

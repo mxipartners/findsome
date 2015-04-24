@@ -1,12 +1,12 @@
 Template.descriptionControl.created = function() {
-  Session.set('descriptionErrors', {});
+  Session.set(Template.currentData().control_id, {});
 }
 
 Template.descriptionControl.helpers({
   errorMessage: function(field) {
-    return Session.get('descriptionErrors')[field];
+    return Session.get(Template.currentData().control_id)[field];
   },
   errorClass: function (field) {
-    return !!Session.get('descriptionErrors')[field] ? 'has-error' : '';
+    return !!Session.get(Template.currentData().control_id)[field] ? 'has-error' : '';
   }
 });

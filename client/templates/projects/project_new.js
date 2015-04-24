@@ -7,13 +7,13 @@ Template.projectNew.events({
       description: $(e.target).find('[name=description]').val()
     };
 
-    Session.set('titleErrors', {});
-    Session.set('descriptionErrors', {});
+    Session.set('project_title', {});
+    Session.set('project_description', {});
     var errors = validateProject(project);
     if (errors.title)
-      Session.set('titleErrors', errors);
+      Session.set('project_title', errors);
     if (errors.description)
-      Session.set('descriptionErrors', errors);
+      Session.set('project_description', errors);
     if (errors.title || errors.description)
       return false;
 

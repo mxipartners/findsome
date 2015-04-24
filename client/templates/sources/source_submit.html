@@ -1,7 +1,7 @@
 <template name="sourceSubmit">
   <form name="source" class="source-form form">
-    {{> titleControl title='' kind='source'}}
-    {{> descriptionControl description=''}}
+    {{> titleControl control_id='source_title' title='' kind='source'}}
+    {{> descriptionControl control_id='source_description' description=''}}
     <button type="submit" class="btn btn-primary">Add source</button>
   </form>
 </template>

@@ -34,14 +34,14 @@ Template.findingEdit.events({
       sources: $sources.val(),
     };
 
-    Session.set('titleErrors', {});
-    Session.set('descriptionErrors', {});
+    Session.set('finding_title', {});
+    Session.set('finding_description', {});
     Session.set('findingEditErrors', {});
     var errors = validateFinding(findingProperties);
     if (errors.title)
-      Session.set('titleErrors', errors);
+      Session.set('finding_title', errors);
     if (errors.description)
-      Session.set('descriptionErrors', errors);
+      Session.set('finding_description', errors);
     if (errors.sources)
       Session.set('findingEditErrors', errors);
     if (errors.title || errors.description || errors.sources)

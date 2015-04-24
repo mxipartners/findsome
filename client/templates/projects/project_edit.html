@@ -1,7 +1,7 @@
 <template name="projectEdit">
   <form class="main form page">
-    {{> titleControl}}
-    {{> descriptionControl}}
+    {{> titleControl extendContext 'control_id' 'project_title'}}
+    {{> descriptionControl extendContext 'control_id' 'project_description'}}
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
     <hr/>
     <a class="btn btn-danger delete" href="#">Delete project</a>

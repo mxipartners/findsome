@@ -1,7 +1,7 @@
 <template name="sourceEdit">
   <form name="source" class="source-form form">
-    {{> titleControl}}
-    {{>descriptionControl}}
+    {{> titleControl extendContext 'control_id' 'source_title'}}
+    {{>descriptionControl extendContext 'control_id' 'source_description'}}
     <button type="submit" class="btn btn-primary submit">Submit source</button>
     {{#if hasNoFindings}}
       <hr/>

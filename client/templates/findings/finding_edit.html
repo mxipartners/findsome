@@ -1,7 +1,7 @@
 <template name="findingEdit">
   <form name="finding" class="finding-form form">
-    {{> titleControl}}
-    {{> descriptionControl}}
+    {{> titleControl extendContext 'control_id' 'finding_title'}}
+    {{> descriptionControl extendContext 'control_id' 'finding_description'}}
     <div class="form-group {{errorClass 'sources'}}">
       <div class="controls">
         <label for="sources">Sources</label>

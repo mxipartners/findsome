@@ -2,7 +2,7 @@
   <div class="form-group {{errorClass 'description'}}">
     <div class="controls">
       <label for="description">Description</label>
-      <textarea name="description" id="description" class="form-control"
+      <textarea name="description" id="{{control_id}}" class="form-control"
                 rows="3" value="{{description}}">{{description}}</textarea>
       <span class="help-block">{{errorMessage 'description'}}</span>
     </div>

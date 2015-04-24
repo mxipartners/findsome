@@ -1,7 +1,7 @@
 <template name="projectNew">
   <form class="main form page">
-    {{> titleControl title='' kind='project'}}
-    {{> descriptionControl description=''}}
+    {{> titleControl control_id='project_title' title='' kind='project'}}
+    {{> descriptionControl control_id='project_description' description=''}}
     <input type="submit" value="Submit" class="btn btn-primary"/>
   </form>
 </template>

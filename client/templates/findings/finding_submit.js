@@ -29,13 +29,13 @@ Template.findingSubmit.events({
     };
 
     Session.set('findingSubmitErrors', {});
-    Session.set('titleErrors', {});
-    Session.set('descriptionErrors', {});
+    Session.set('finding_title', {});
+    Session.set('finding_description', {});
     var errors = validateFinding(finding);
     if (errors.title)
-      Session.set('titleErrors', errors);
+      Session.set('finding_title', errors);
     if (errors.description)
-      Session.set('descriptionErrors', errors);
+      Session.set('finding_description', errors);
     if (errors.sources)
       Session.set('findingSubmitErrors', errors);
     if (errors.title || errors.description || errors.sources)
