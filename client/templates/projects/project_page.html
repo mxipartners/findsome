@@ -1,35 +1,57 @@
 <template name="projectPage">
   <div class="project-page page">
     {{> projectItem extendContext 'projectItemIsOpen' true}}
-    <div class="row">
-      <div class="col-md-6 col-lg-6">
-        <ul class="sources">
-          {{#each sources}}
-            {{> sourceItem}}
-          {{/each}}
-        </ul>
-        {{#if currentUser}}
-          {{> sourceSubmit}}
-        {{else}}
-          <p>Please log in to add sources.</p>
-        {{/if}}
-      </div>
-      {{#if has_sources}}
-        <div class="col-md-6 col-lg-6">
-          <ul class="findings">
-            {{#each findings}}
-              {{> findingItem}}
+    <div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
+            Sources
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#findings" aria-controls="findings" role="tab" data-toggle="tab">
+            Findings
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#export" aria-controls="export" role="tab" data-toggle="tab">
+            Export
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="sources">
+          <ul class="sources">
+            {{#each sources}}
+              {{> sourceItem}}
             {{/each}}
           </ul>
           {{#if currentUser}}
-            {{> findingSubmit}}
+            {{> sourceSubmit}}
           {{else}}
-            <p>Please log in to add findings.</p>
+            <p>Please log in to add sources.</p>
           {{/if}}
         </div>
-      {{else}}
-        <p>You need to add sources before you can add findings.</p>
-      {{/if}}
+        <div class="tab-pane fade" id="findings">
+          {{#if has_sources}}
+            <ul class="findings">
+              {{#each findings}}
+                {{> findingItem}}
+              {{/each}}
+            </ul>
+            {{#if currentUser}}
+              {{> findingSubmit}}
+            {{else}}
+              <p>Please log in to add findings.</p>
+            {{/if}}
+          {{else}}
+            <p>You need to add sources before you can add findings.</p>
+          {{/if}}
+        </div>
+        <div class="tab-pane fade" id="export">
+          {{> projectExport}}
+        </div>
+      </div>
     </div>
   </div>
 </template>
