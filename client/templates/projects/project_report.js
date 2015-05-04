@@ -1,4 +1,4 @@
-Template.projectExport.helpers({
+Template.projectReport.helpers({
   findings: function() {
     return Findings.find({projectId: this._id});
   },
