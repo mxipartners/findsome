@@ -31,11 +31,7 @@
               {{> sourceItem}}
             {{/each}}
           </ul>
-          {{#if currentUser}}
-            {{> sourceSubmit}}
-          {{else}}
-            <p>Please log in to add sources.</p>
-          {{/if}}
+          {{> sourceSubmit}}
         </div>
         <div class="tab-pane fade" id="findings">
           {{#if has_sources}}
@@ -44,13 +40,11 @@
                 {{> findingItem}}
               {{/each}}
             </ul>
-            {{#if currentUser}}
-              {{> findingSubmit}}
-            {{else}}
-              <p>Please log in to add findings.</p>
-            {{/if}}
+            {{> findingSubmit}}
           {{else}}
-            <p>You need to add sources before you can add findings.</p>
+            <div class="jumbotron">
+              <p>You need to add sources before you can add findings.</p>
+            </div>
           {{/if}}
         </div>
         <div class="tab-pane fade" id="risks">
@@ -60,13 +54,11 @@
                 {{> riskItem}}
               {{/each}}
             </ul>
-            {{#if currentUser}}
-              {{> riskSubmit}}
-            {{else}}
-              <p>Please log in to add risks.</p>
-            {{/if}}
+            {{> riskSubmit}}
           {{else}}
-            <p>You need to add findings before you can add risks.</p>
+            <div class="jumbotron">
+              <p>You need to add findings before you can add risks.</p>
+            </div>
           {{/if}}
         </div>
         <div class="tab-pane fade" id="report">
