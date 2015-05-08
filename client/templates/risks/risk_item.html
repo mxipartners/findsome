@@ -1,0 +1,9 @@
+<template name="riskItem">
+  <li>
+    <div class="risks-content">
+      <h3>{{title}} <span>{{description}}</span></h3>
+      {{> submittedAuthorDate}}
+    </div>
+    <a href="{{pathFor 'riskEdit'}}" class="discuss btn btn-default">Edit</a>
+  </li>
+</template>

@@ -1,0 +1,18 @@
+<template name="riskSubmit">
+  <form name="risk" class="risk-form form">
+    {{> titleControl control_id='risk_title' title='' kind='risk'}}
+    {{> descriptionControl control_id='risk_description' description=''}}
+    <div class="form-group {{errorClass 'findings'}}">
+      <div class="controls">
+        <label for="findings">Findings</label>
+        <select name="findings" size="3" multiple="multiple" tabindex="1" class="form-control">
+          {{#each findings}}
+            <option value="{{_id}}">{{title}}</option>
+          {{/each}}
+        </select>
+        <span class="help-block">{{errorMessage 'findings'}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add risk</button>
+  </form>
+</template>

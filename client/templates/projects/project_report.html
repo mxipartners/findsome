@@ -40,5 +40,26 @@
         </tbody>
       </table>
     </div>
+    <div class="grid-block">
+      <table class="table table-striped">
+        <caption>Risks</caption>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Findings</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each risks}}
+            <tr>
+              <td>{{title}}</td>
+              <td>{{description}}</td>
+              <td>{{#each riskFindings}}{{title}}<br>{{/each}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
