@@ -1,65 +1,75 @@
 <template name="projectReport">
   <div>
-    <div class="grid-block">
-      <table class="table table-striped">
-        <caption>Sources</caption>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each sources}}
+    {{#if has_sources}}
+      <div class="grid-block">
+        <table class="table table-striped">
+          <caption>Sources</caption>
+          <thead>
             <tr>
-              <td>{{title}}</td>
-              <td>{{description}}</td>
+              <th>Title</th>
+              <th>Description</th>
             </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
-    <div class="grid-block">
-      <table class="table table-striped">
-        <caption>Findings</caption>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Sources</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each findings}}
+          </thead>
+          <tbody>
+            {{#each sources}}
+              <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{else}}
+      <div class="jumbotron">
+        <p>You need to add sources before you can generate a report.</p>
+      </div>
+    {{/if}}
+    {{#if has_findings}}
+      <div class="grid-block">
+        <table class="table table-striped">
+          <caption>Findings</caption>
+          <thead>
             <tr>
-              <td>{{title}}</td>
-              <td>{{description}}</td>
-              <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Sources</th>
             </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
-    <div class="grid-block">
-      <table class="table table-striped">
-        <caption>Risks</caption>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Findings</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each risks}}
+          </thead>
+          <tbody>
+            {{#each findings}}
+              <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
+    {{#if has_risks}}
+      <div class="grid-block">
+        <table class="table table-striped">
+          <caption>Risks</caption>
+          <thead>
             <tr>
-              <td>{{title}}</td>
-              <td>{{description}}</td>
-              <td>{{#each riskFindings}}{{title}}<br>{{/each}}</td>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Findings</th>
             </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {{#each risks}}
+              <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{#each riskFindings}}{{title}}<br>{{/each}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
   </div>
 </template>
