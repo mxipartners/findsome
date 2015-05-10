@@ -1,5 +1,5 @@
 Meteor.publish('projects', function() {
-  return Projects.find();
+  return Projects.find({members: this.userId});
 });
 
 Meteor.publish('risks', function(projectId) {
@@ -19,4 +19,8 @@ Meteor.publish('sources', function(projectId) {
 
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId, read: false});
+});
+
+Meteor.publish('usernames', function() {
+  return Meteor.users.find({}, {fields: {'username': 1, '_id': 1}});
 });

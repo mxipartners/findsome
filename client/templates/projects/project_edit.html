@@ -2,6 +2,16 @@
   <form class="main form page">
     {{> titleControl extendContext 'control_id' 'project_title'}}
     {{> descriptionControl extendContext 'control_id' 'project_description'}}
+    <div class="form-group">
+      <div class="controls">
+        <label for="members">Project members</label>
+        <select name="members" size="3" multiple="multiple" tabindex="1" class="form-control">
+          {{#each usernames}}
+            <option selected="{{userIsMember}}" value="{{_id}}">{{username}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
     <hr/>
     <a data-toggle="modal" class="btn btn-danger delete" href="#deleteProject">Delete project</a>

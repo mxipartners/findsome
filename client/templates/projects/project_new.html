@@ -2,6 +2,16 @@
   <form class="main form page">
     {{> titleControl control_id='project_title' title='' kind='project'}}
     {{> descriptionControl control_id='project_description' description=''}}
+    <div class="form-group">
+      <div class="controls">
+        <label for="members">Project members</label>
+        <select name="members" size="3" multiple="multiple" tabindex="1" class="form-control">
+          {{#each usernames}}
+            <option selected="{{userIsMember}}" value="{{_id}}">{{username}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
     <input type="submit" value="Submit" class="btn btn-primary"/>
   </form>
 </template>

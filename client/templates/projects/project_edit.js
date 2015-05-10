@@ -1,3 +1,13 @@
+Template.projectEdit.helpers({
+  usernames: function() {
+    return Meteor.users.find();
+  },
+  userIsMember: function() {
+    var project = Template.parentData();
+    return project.members.indexOf(this._id) > -1;
+  }
+});
+
 Template.projectEdit.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -6,7 +16,8 @@ Template.projectEdit.events({
 
     var projectProperties = {
       title: $(e.target).find('[name=title]').val(),
-      description: $(e.target).find('[name=description]').val()
+      description: $(e.target).find('[name=description]').val(),
+      members: $(e.target).find('[name=members]').val()
     }
 
     Session.set('project_title', {});
