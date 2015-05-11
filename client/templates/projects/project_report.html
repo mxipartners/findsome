@@ -71,5 +71,28 @@
         </table>
       </div>
     {{/if}}
+    {{#if has_measures}}
+      <div class="grid-block">
+        <table class="table table-striped">
+          <caption>Measures</caption>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Risks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each measures}}
+              <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>{{#each measureRisks}}{{title}}<br>{{/each}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
   </div>
 </template>

@@ -1,4 +1,4 @@
-.grid-block, .main, .project, .risks li, .risk-form, .findings li, .finding-form, .sources li, .source-form {
+.grid-block, .main, .project, .measures li, .measure-form, .risks li, .risk-form, .findings li, .finding-form, .sources li, .source-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -77,6 +77,30 @@ body {
    font-size: 12px;
    color: #aaaaaa;
  }
+
+ .measures {
+   list-style-type: none;
+   padding-left: 0;
+   font-size: 16px;
+   margin: 0; }
+   .measures li {
+     display: block; }
+     .measures li .measures-content {
+       display: inline-block;
+       width: 90%; }
+       .measures li .measures-content h3 {
+         margin: 0;
+         line-height: 1.4;
+         font-size: 18px; }
+         .measures li .measures-content h3 span {
+           font-weight: normal;
+           font-size: 14px;
+           display: inline-block;
+           color: #aaaaaa; }
+     .measures li .discuss {
+       display: block;
+       float: right;
+       margin-top: 7px; }
 
  .risks {
    list-style-type: none;

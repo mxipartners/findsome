@@ -1,4 +1,13 @@
 Template.projectReport.helpers({
+  measures: function() {
+    return Measures.find({projectId: this._id});
+  },
+  has_measures: function() {
+    return Measures.find({projectId: this._id}).count() > 0;
+  },
+  measureRisks: function() {
+    return Risks.find({_id: {$in: this.risks}});
+  },
   risks: function() {
     return Risks.find({projectId: this._id});
   },

@@ -1,0 +1,18 @@
+<template name="measureSubmit">
+  <form name="measure" class="measure-form form">
+    {{> titleControl control_id='measure_title' title='' kind='measure'}}
+    {{> descriptionControl control_id='measure_description' description=''}}
+    <div class="form-group {{errorClass 'measures'}}">
+      <div class="controls">
+        <label for="risks">Risks</label>
+        <select name="risks" size="3" multiple="multiple" tabindex="1" class="form-control">
+          {{#each risks}}
+            <option value="{{_id}}">{{title}}</option>
+          {{/each}}
+        </select>
+        <span class="help-block">{{errorMessage 'measures'}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add measure</button>
+  </form>
+</template>

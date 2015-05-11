@@ -1,0 +1,9 @@
+<template name="measureItem">
+  <li>
+    <div class="measures-content">
+      <h3>{{title}} <span>{{description}}</span></h3>
+      {{> submittedAuthorDate}}
+    </div>
+    <a href="{{pathFor 'measureEdit'}}" class="discuss btn btn-default">Edit</a>
+  </li>
+</template>

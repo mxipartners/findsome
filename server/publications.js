@@ -2,6 +2,11 @@ Meteor.publish('projects', function() {
   return Projects.find({members: this.userId});
 });
 
+Meteor.publish('measures', function(projectId) {
+  check(projectId, String);
+  return Measures.find({projectId: projectId});
+});
+
 Meteor.publish('risks', function(projectId) {
   check(projectId, String);
   return Risks.find({projectId: projectId});
