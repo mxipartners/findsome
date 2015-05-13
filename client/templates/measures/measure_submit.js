@@ -30,15 +30,12 @@ Template.measureSubmit.events({
 
     Session.set('measureSubmitErrors', {});
     Session.set('measure_title', {});
-    Session.set('measure_description', {});
     var errors = validateMeasure(measure);
     if (errors.title)
       Session.set('measure_title', errors);
-    if (errors.description)
-      Session.set('measure_description', errors);
     if (errors.risks)
       Session.set('measureSubmitErrors', errors);
-    if (errors.title || errors.description || errors.risks)
+    if (errors.title || errors.risks)
       return false;
 
     Meteor.call('measureInsert', measure, function(error, measureId) {

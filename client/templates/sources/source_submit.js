@@ -11,15 +11,12 @@ Template.sourceSubmit.events({
     };
 
     Session.set('source_title', {});
-    Session.set('source_description', {});
     var errors = validateSource(source);
     if (errors.title)
+    {
       Session.set('source_title', errors);
-    if (errors.description)
-      Session.set('source_description', errors);
-    if (errors.title || errors.description)
       return false;
-
+    };
     Meteor.call('sourceInsert', source, function(error, sourceId) {
       if (error){
         throwError(error.reason);

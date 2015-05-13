@@ -19,15 +19,12 @@ Template.sourceEdit.events({
     };
 
     Session.set('source_title', {});
-    Session.set('source_description', {});
     var errors = validateSource(sourceProperties);
     if (errors.title)
+    {
       Session.set('source_title', errors);
-    if (errors.description)
-      Session.set('source_description', errors);
-    if (errors.title || errors.description)
       return false;
-
+    };
     Sources.update(currentSourceId, {$set: sourceProperties}, function(error) {
       if (error) {
         throwError(error.reason);

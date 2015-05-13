@@ -35,16 +35,13 @@ Template.findingEdit.events({
     };
 
     Session.set('finding_title', {});
-    Session.set('finding_description', {});
     Session.set('findingEditErrors', {});
     var errors = validateFinding(findingProperties);
     if (errors.title)
       Session.set('finding_title', errors);
-    if (errors.description)
-      Session.set('finding_description', errors);
     if (errors.sources)
       Session.set('findingEditErrors', errors);
-    if (errors.title || errors.description || errors.sources)
+    if (errors.title || errors.sources)
       return false;
 
     Findings.update(currentFindingId, {$set: findingProperties}, function(error) {

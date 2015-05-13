@@ -30,15 +30,12 @@ Template.riskSubmit.events({
 
     Session.set('riskSubmitErrors', {});
     Session.set('risk_title', {});
-    Session.set('risk_description', {});
     var errors = validateRisk(risk);
     if (errors.title)
       Session.set('risk_title', errors);
-    if (errors.description)
-      Session.set('risk_description', errors);
     if (errors.findings)
       Session.set('riskSubmitErrors', errors);
-    if (errors.title || errors.description || errors.findings)
+    if (errors.title || errors.findings)
       return false;
 
     Meteor.call('riskInsert', risk, function(error, riskId) {

@@ -1,10 +1,6 @@
 Template.projectNew.helpers({
   usernames: function() {
     return Meteor.users.find();
-  },
-  userIsMember: function() {
-    var project = Template.parentData();
-    return project.members.indexOf(this._id) > -1;
   }
 });
 
@@ -19,15 +15,12 @@ Template.projectNew.events({
     };
 
     Session.set('project_title', {});
-    Session.set('project_description', {});
     var errors = validateProject(project);
     if (errors.title)
+    {
       Session.set('project_title', errors);
-    if (errors.description)
-      Session.set('project_description', errors);
-    if (errors.title || errors.description)
       return false;
-
+    };
     Meteor.call('projectInsert', project, function(error, result) {
       // display the error to the user and abort
       if (error)

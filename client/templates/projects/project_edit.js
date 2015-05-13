@@ -21,15 +21,12 @@ Template.projectEdit.events({
     }
 
     Session.set('project_title', {});
-    Session.set('project_description', {});
     var errors = validateProject(projectProperties);
     if (errors.title)
+    {
       Session.set('project_title', errors);
-    if (errors.description)
-      Session.set('project_description', errors);
-    if (errors.title || errors.description)
       return false;
-
+    };
     Projects.update(currentProjectId, {$set: projectProperties}, function(error) {
       if (error) {
         // display the error to the user

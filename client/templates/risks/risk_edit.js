@@ -35,16 +35,13 @@ Template.riskEdit.events({
     };
 
     Session.set('risk_title', {});
-    Session.set('risk_description', {});
     Session.set('riskEditErrors', {});
     var errors = validateRisk(riskProperties);
     if (errors.title)
       Session.set('risk_title', errors);
-    if (errors.description)
-      Session.set('risk_description', errors);
     if (errors.findings)
       Session.set('riskEditErrors', errors);
-    if (errors.title || errors.description || errors.findings)
+    if (errors.title || errors.findings)
       return false;
 
     Risks.update(currentRiskId, {$set: riskProperties}, function(error) {

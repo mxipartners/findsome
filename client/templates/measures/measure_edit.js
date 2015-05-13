@@ -35,16 +35,13 @@ Template.measureEdit.events({
     };
 
     Session.set('measure_title', {});
-    Session.set('measure_description', {});
     Session.set('measureEditErrors', {});
     var errors = validateMeasure(measureProperties);
     if (errors.title)
       Session.set('measure_title', errors);
-    if (errors.description)
-      Session.set('measure_description', errors);
     if (errors.risks)
       Session.set('measureEditErrors', errors);
-    if (errors.title || errors.description || errors.risks)
+    if (errors.title || errors.risks)
       return false;
 
     Measures.update(currentMeasureId, {$set: measureProperties}, function(error) {
