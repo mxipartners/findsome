@@ -5,7 +5,7 @@
     <div class="form-group {{errorClass 'sources'}}">
       <div class="controls">
         <label for="sources">Sources</label>
-        <select name="sources" size="3" multiple="multiple" tabindex="1" class="form-control">
+        <select name="sources" size="3" multiple="multiple" class="form-control">
           {{#each sources}}
             <option value="{{_id}}">{{title}}</option>
           {{/each}}

@@ -5,7 +5,7 @@
     <div class="form-group {{errorClass 'measures'}}">
       <div class="controls">
         <label for="risks">Risks</label>
-        <select name="risks" size="3" multiple="multiple" tabindex="1" class="form-control">
+        <select name="risks" size="3" multiple="multiple" class="form-control">
           {{#each risks}}
             <option value="{{_id}}">{{title}}</option>
           {{/each}}
