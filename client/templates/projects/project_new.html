@@ -1,8 +1,8 @@
 <template name="projectNew">
-  <form class="main form page">
+  <form name="project" class="main form page">
     {{> titleControl control_id='project_title' title='' kind='project'}}
     {{> descriptionControl control_id='project_description' description=''}}
-    <div class="form-group">
+    <div class="form-group {{errorClass 'members'}}">
       <div class="controls">
         <label for="members">Project members</label>
         <select name="members" size="3" multiple="multiple" class="form-control">
@@ -10,8 +10,9 @@
             <option value="{{_id}}">{{username}}</option>
           {{/each}}
         </select>
+        <span class="help-block">{{errorMessage 'members'}}</span>
       </div>
     </div>
-    <input type="submit" value="Submit" class="btn btn-primary"/>
+    <button type="submit" class="btn btn-primary">Add project</button>
   </form>
 </template>

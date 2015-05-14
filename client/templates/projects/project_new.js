@@ -1,6 +1,16 @@
+Template.projectNew.created = function() {
+  Session.set('projectNewErrors', {});
+};
+
 Template.projectNew.helpers({
   usernames: function() {
     return Meteor.users.find();
+  },
+  errorMessage: function(field) {
+    return Session.get('projectNewErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('projectNewErrors')[field] ? 'has-error' : '';
   }
 });
 
@@ -15,12 +25,15 @@ Template.projectNew.events({
     };
 
     Session.set('project_title', {});
+    Session.set('projectNewErrors', {});
     var errors = validateProject(project);
     if (errors.title)
-    {
       Session.set('project_title', errors);
+    if (errors.members)
+      Session.set('projectNewErrors', errors);
+    if (errors.title || errors.members)
       return false;
-    };
+
     Meteor.call('projectInsert', project, function(error, result) {
       // display the error to the user and abort
       if (error)

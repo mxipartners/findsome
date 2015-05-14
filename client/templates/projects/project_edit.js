@@ -1,3 +1,7 @@
+Template.projectEdit.created = function() {
+  Session.set('projectEditErrors', {});
+};
+
 Template.projectEdit.helpers({
   usernames: function() {
     return Meteor.users.find();
@@ -5,6 +9,12 @@ Template.projectEdit.helpers({
   userIsMember: function() {
     var project = Template.parentData();
     return project.members.indexOf(this._id) > -1;
+  },
+  errorMessage: function(field) {
+    return Session.get('projectEditErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('projectEditErrors')[field] ? 'has-error' : '';
   }
 });
 
@@ -18,15 +28,19 @@ Template.projectEdit.events({
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       members: $(e.target).find('[name=members]').val()
-    }
+    };
 
     Session.set('project_title', {});
+    Session.set('projectEditErrors', {});
     var errors = validateProject(projectProperties);
+
     if (errors.title)
-    {
       Session.set('project_title', errors);
+    if (errors.members)
+      Session.set('projectEditErrors', errors);
+    if (errors.title || errors.members)
       return false;
-    };
+
     Projects.update(currentProjectId, {$set: projectProperties}, function(error) {
       if (error) {
         // display the error to the user

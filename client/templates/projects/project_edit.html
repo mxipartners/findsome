@@ -1,8 +1,8 @@
 <template name="projectEdit">
-  <form class="main form page">
+  <form name="project" class="main form page">
     {{> titleControl extendContext 'control_id' 'project_title'}}
     {{> descriptionControl extendContext 'control_id' 'project_description'}}
-    <div class="form-group">
+    <div class="form-group {{errorClass 'members'}}">
       <div class="controls">
         <label for="members">Project members</label>
         <select name="members" size="3" multiple="multiple" class="form-control">
@@ -10,9 +10,10 @@
             <option selected="{{userIsMember}}" value="{{_id}}">{{username}}</option>
           {{/each}}
         </select>
+        <span class="help-block">{{errorMessage 'members'}}</span>
       </div>
     </div>
-    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <button type="submit" class="btn btn-primary submit">Submit project</button>
     <hr/>
     <a data-toggle="modal" class="btn btn-danger delete" href="#deleteProject">Delete project</a>
   </form>
