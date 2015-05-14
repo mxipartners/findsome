@@ -3,8 +3,10 @@
     <div class="project-content">
       <h3>{{title}} <span>{{description}}</span></h3>
       <p>
-        {{pluralize sourcesCount "source"}}, {{pluralize findingsCount "finding"}},
-        {{pluralize risksCount "risk"}}, {{pluralize measuresCount "measure"}}.
+        {{pluralize members.length "project member"}} entered
+        {{pluralize sourcesCount "source"}},
+        {{pluralize findingsCount "finding"}}, {{pluralize risksCount "risk"}},
+        and {{pluralize measuresCount "measure"}}.
       </p>
       {{> submittedAuthorDate}}
     </div>
