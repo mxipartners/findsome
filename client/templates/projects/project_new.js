@@ -39,10 +39,6 @@ Template.projectNew.events({
       if (error)
         return throwError(error.reason);
 
-      // show this result but route anyway
-      if (result.projectExists)
-        throwError('This project has already been created');
-
       Router.go('projectPage', {_id: result._id});
     });
   }
