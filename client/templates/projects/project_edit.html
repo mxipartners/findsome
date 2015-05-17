@@ -5,7 +5,7 @@
     <div class="form-group {{errorClass 'members'}}">
       <div class="controls">
         <label for="members">Project members</label>
-        <select name="members" multiple="multiple" class="form-control select2">
+        <select name="members" multiple="multiple" class="form-control member-select">
           {{#each usernames}}
             <option selected="{{userIsMember}}" value="{{_id}}">{{username}}</option>
           {{/each}}

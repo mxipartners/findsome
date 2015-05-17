@@ -3,7 +3,7 @@ Template.projectEdit.created = function() {
 };
 
 Template.projectEdit.rendered = function() {
-  $(".select2").select2({
+  $(".member-select").select2({
     placeholder: "Select project members"
   });
 };

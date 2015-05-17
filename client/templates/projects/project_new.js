@@ -3,7 +3,7 @@ Template.projectNew.created = function() {
 };
 
 Template.projectNew.rendered = function() {
-  $(".select2").select2({
+  $(".member-select").select2({
     placeholder: "Select project members"
   });
 };
