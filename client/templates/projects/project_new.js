@@ -2,6 +2,12 @@ Template.projectNew.created = function() {
   Session.set('projectNewErrors', {});
 };
 
+Template.projectNew.rendered = function() {
+  $(".select2").select2({
+    placeholder: "Select project members"
+  });
+};
+
 Template.projectNew.helpers({
   usernames: function() {
     return Meteor.users.find();

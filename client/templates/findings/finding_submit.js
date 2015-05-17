@@ -2,6 +2,12 @@ Template.findingSubmit.created = function() {
   Session.set('findingSubmitErrors', {});
 }
 
+Template.findingSubmit.rendered = function() {
+  $(".source-select").select2({
+    placeholder: "Select sources"
+  });
+};
+
 Template.findingSubmit.helpers({
   errorMessage: function(field) {
     return Session.get('findingSubmitErrors')[field];

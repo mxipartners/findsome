@@ -2,6 +2,12 @@ Template.measureSubmit.created = function() {
   Session.set('measureSubmitErrors', {});
 }
 
+Template.measureSubmit.rendered = function() {
+  $(".risk-select").select2({
+    placeholder: "Select risks"
+  });
+};
+
 Template.measureSubmit.helpers({
   errorMessage: function(field) {
     return Session.get('measureSubmitErrors')[field];

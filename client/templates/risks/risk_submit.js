@@ -2,6 +2,12 @@ Template.riskSubmit.created = function() {
   Session.set('riskSubmitErrors', {});
 }
 
+Template.riskSubmit.rendered = function() {
+  $(".finding-select").select2({
+    placeholder: "Select findings"
+  });
+};
+
 Template.riskSubmit.helpers({
   errorMessage: function(field) {
     return Session.get('riskSubmitErrors')[field];

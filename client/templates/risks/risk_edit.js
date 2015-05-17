@@ -2,6 +2,12 @@ Template.riskEdit.created = function() {
   Session.set('riskEditErrors', {});
 }
 
+Template.riskEdit.rendered = function() {
+  $(".finding-select").select2({
+    placeholder: "Select findings"
+  });
+};
+
 Template.riskEdit.helpers({
   errorMessage: function(field) {
     return Session.get('riskEditErrors')[field];

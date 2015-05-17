@@ -2,6 +2,12 @@ Template.measureEdit.created = function() {
   Session.set('measureEditErrors', {});
 }
 
+Template.measureEdit.rendered = function() {
+  $(".risk-select").select2({
+    placeholder: "Select risks"
+  });
+};
+
 Template.measureEdit.helpers({
   errorMessage: function(field) {
     return Session.get('measureEditErrors')[field];

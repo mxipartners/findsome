@@ -2,6 +2,12 @@ Template.findingEdit.created = function() {
   Session.set('findingEditErrors', {});
 }
 
+Template.findingEdit.rendered = function() {
+  $(".source-select").select2({
+    placeholder: "Select sources"
+  });
+};
+
 Template.findingEdit.helpers({
   errorMessage: function(field) {
     return Session.get('findingEditErrors')[field];
