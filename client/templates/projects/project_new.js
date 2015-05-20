@@ -12,6 +12,9 @@ Template.projectNew.helpers({
   usernames: function() {
     return Meteor.users.find();
   },
+  userIsCurrentUser: function() {
+    return this._id === Meteor.userId();
+  },
   errorMessage: function(field) {
     return Session.get('projectNewErrors')[field];
   },

@@ -7,7 +7,7 @@
         <label for="members">Project members</label>
           <select name="members" multiple="multiple" class="form-control member-select">
           {{#each usernames}}
-            <option value="{{_id}}">{{username}}</option>
+            <option selected="{{userIsCurrentUser}}" value="{{_id}}">{{username}}</option>
           {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'members'}}</span>
