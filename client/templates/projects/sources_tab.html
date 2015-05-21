@@ -1,0 +1,10 @@
+<template name="sourcesTab">
+  <div class="tab-pane fade in active" id="sources">
+    <ul class="sources">
+      {{#each sources}}
+        {{> sourceItem}}
+      {{/each}}
+    </ul>
+    {{> sourceSubmit}}
+  </div>
+</template>

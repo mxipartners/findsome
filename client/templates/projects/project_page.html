@@ -30,56 +30,10 @@
         </li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane fade in active" id="sources">
-          <ul class="sources">
-            {{#each sources}}
-              {{> sourceItem}}
-            {{/each}}
-          </ul>
-          {{> sourceSubmit}}
-        </div>
-        <div class="tab-pane fade" id="findings">
-          {{#if has_sources}}
-            <ul class="findings">
-              {{#each findings}}
-                {{> findingItem}}
-              {{/each}}
-            </ul>
-            {{> findingSubmit}}
-          {{else}}
-            <div class="jumbotron">
-              <p>You need to add sources before you can add findings.</p>
-            </div>
-          {{/if}}
-        </div>
-        <div class="tab-pane fade" id="risks">
-          {{#if has_findings}}
-            <ul class="risks">
-              {{#each risks}}
-                {{> riskItem}}
-              {{/each}}
-            </ul>
-            {{> riskSubmit}}
-          {{else}}
-            <div class="jumbotron">
-              <p>You need to add findings before you can add risks.</p>
-            </div>
-          {{/if}}
-        </div>
-        <div class="tab-pane fade" id="measures">
-          {{#if has_risks}}
-            <ul class="measures">
-              {{#each measures}}
-                {{> measureItem}}
-              {{/each}}
-            </ul>
-            {{> measureSubmit}}
-          {{else}}
-            <div class="jumbotron">
-              <p>You need to add risks before you can add measures.</p>
-            </div>
-          {{/if}}
-        </div>
+        {{> sourcesTab}}
+        {{> findingsTab}}
+        {{> risksTab}}
+        {{> measuresTab}}
         <div class="tab-pane fade" id="report">
           {{> projectReport}}
         </div>
