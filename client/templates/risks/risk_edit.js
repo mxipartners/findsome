@@ -54,6 +54,7 @@ Template.riskEdit.events({
       if (error) {
         throwError(error.reason);
       } else {
+        Session.set('itemEdited', null);
         Router.go('projectPage', {_id: projectId});
       }
     });
@@ -67,6 +68,7 @@ Template.deleteRisk.events({
     Risks.remove(this._id);
     // Make sure the backdrop is hidden before we go to the project page.
     $('#deleteRisk').on('hidden.bs.modal', function() {
+      Session.set('itemEdited', null);
       Router.go('projectPage', {_id: projectId});
     }).modal('hide');
   }

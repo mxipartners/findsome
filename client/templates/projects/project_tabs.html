@@ -1,0 +1,40 @@
+<template name="projectTabs">
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
+          Sources
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#findings" aria-controls="findings" role="tab" data-toggle="tab">
+          Findings
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#risks" aria-controls="risks" role="tab" data-toggle="tab">
+          Risks
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#measures" aria-controls="measures" role="tab" data-toggle="tab">
+          Measures
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#report" aria-controls="report" role="tab" data-toggle="tab">
+          Report
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      {{> sourcesTab}}
+      {{> findingsTab}}
+      {{> risksTab}}
+      {{> measuresTab}}
+      <div class="tab-pane fade" id="report">
+        {{> projectReport}}
+      </div>
+    </div>
+  </div>
+</template>
