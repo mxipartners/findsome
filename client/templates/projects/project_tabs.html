@@ -1,5 +1,5 @@
 <template name="projectTabs">
-  <div>
+  <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active">
         <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
@@ -28,11 +28,57 @@
       </li>
     </ul>
     <div class="tab-content">
-      {{> sourcesTab}}
-      {{> findingsTab}}
-      {{> risksTab}}
-      {{> measuresTab}}
-      <div class="tab-pane fade" id="report">
+      <div role="tabpanel" class="tab-pane fade active in" id="sources" aria-labelled-by="sources">
+        <ul class="sources">
+          {{#each sources}}
+            {{> sourceItem}}
+          {{/each}}
+        </ul>
+        {{> sourceSubmit}}
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="findings" aria-labelled-by="findings">
+        {{#if has_sources}}
+          <ul class="findings">
+            {{#each findings}}
+              {{> findingItem}}
+            {{/each}}
+          </ul>
+          {{> findingSubmit}}
+        {{else}}
+          <div class="jumbotron">
+            <p>You need to add sources before you can add findings.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="risks" aria-labelled-by="risks">
+        {{#if has_findings}}
+          <ul class="risks">
+            {{#each risks}}
+              {{> riskItem}}
+            {{/each}}
+          </ul>
+          {{> riskSubmit}}
+        {{else}}
+          <div class="jumbotron">
+            <p>You need to add findings before you can add risks.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="measures" aria-labelled-by="measures">
+        {{#if has_risks}}
+          <ul class="measures">
+            {{#each measures}}
+              {{> measureItem}}
+            {{/each}}
+          </ul>
+          {{> measureSubmit}}
+        {{else}}
+          <div class="jumbotron">
+            <p>You need to add risks before you can add measures.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="report" aria-labelled-by="measures">
         {{> projectReport}}
       </div>
     </div>
