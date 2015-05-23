@@ -78,6 +78,22 @@ body {
    color: #aaaaaa;
  }
 
+li .item-content {
+  display: inline-block;
+  width: 90%;
+}
+  li .item-content h3 {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 18px;
+  }
+    li .item-content h3 span {
+      font-weight: normal;
+      font-size: 14px;
+      display: inline-block;
+      color: #aaaaaa;
+    }
+
  .measures {
    list-style-type: none;
    padding-left: 0;
@@ -85,18 +101,6 @@ body {
    margin: 0; }
    .measures li {
      display: block; }
-     .measures li .item-content {
-       display: inline-block;
-       width: 90%; }
-       .measures li .item-content h3 {
-         margin: 0;
-         line-height: 1.4;
-         font-size: 18px; }
-         .measures li .item-content h3 span {
-           font-weight: normal;
-           font-size: 14px;
-           display: inline-block;
-           color: #aaaaaa; }
      .measures li .edit {
        display: block;
        float: right;
@@ -109,18 +113,6 @@ body {
    margin: 0; }
    .risks li {
      display: block; }
-     .risks li .item-content {
-       display: inline-block;
-       width: 90%; }
-       .risks li .item-content h3 {
-         margin: 0;
-         line-height: 1.4;
-         font-size: 18px; }
-         .risks li .item-content h3 span {
-           font-weight: normal;
-           font-size: 14px;
-           display: inline-block;
-           color: #aaaaaa; }
      .risks li .edit {
        display: block;
        float: right;
@@ -133,18 +125,6 @@ body {
   margin: 0; }
   .findings li {
     display: block; }
-    .findings li .item-content {
-      display: inline-block;
-      width: 90%; }
-      .findings li .item-content h3 {
-        margin: 0;
-        line-height: 1.4;
-        font-size: 18px; }
-        .findings li .item-content h3 span {
-          font-weight: normal;
-          font-size: 14px;
-          display: inline-block;
-          color: #aaaaaa; }
     .findings li .edit {
       display: block;
       float: right;
@@ -157,18 +137,6 @@ body {
   margin: 0; }
   .sources li {
     display: block; }
-    .sources li .item-content {
-      display: inline-block;
-      width: 90%; }
-      .sources li .item-content h3 {
-        margin: 0;
-        line-height: 1.4;
-        font-size: 18px; }
-        .sources li .item-content h3 span {
-          font-weight: normal;
-          font-size: 14px;
-          display: inline-block;
-          color: #aaaaaa; }
     .sources li .edit {
       display: block;
       float: right;
