@@ -68,7 +68,7 @@ body {
         color: #aaaaaa; }
     .project .project-content p {
       margin: 0; }
-  .project .discuss {
+  .project .edit {
     display: block;
     float: right;
     margin-top: 7px; }
@@ -97,7 +97,7 @@ body {
            font-size: 14px;
            display: inline-block;
            color: #aaaaaa; }
-     .measures li .discuss {
+     .measures li .edit {
        display: block;
        float: right;
        margin-top: 7px; }
@@ -121,7 +121,7 @@ body {
            font-size: 14px;
            display: inline-block;
            color: #aaaaaa; }
-     .risks li .discuss {
+     .risks li .edit {
        display: block;
        float: right;
        margin-top: 7px; }
@@ -145,7 +145,7 @@ body {
           font-size: 14px;
           display: inline-block;
           color: #aaaaaa; }
-    .findings li .discuss {
+    .findings li .edit {
       display: block;
       float: right;
       margin-top: 7px; }
@@ -169,7 +169,7 @@ body {
           font-size: 14px;
           display: inline-block;
           color: #aaaaaa; }
-    .sources li .discuss {
+    .sources li .edit {
       display: block;
       float: right;
       margin-top: 7px; }

@@ -12,9 +12,9 @@
     </div>
     {{#if currentUser}}
       {{#if projectItemIsOpen}}
-        <a href="{{pathFor 'projectEdit'}}" class="discuss btn btn-default">Edit</a>
+        <a href="{{pathFor 'projectEdit'}}" class="edit btn btn-default">Edit</a>
       {{else}}
-        <a href="{{pathFor 'projectPage'}}" class="discuss btn btn-default">Open</a>
+        <a href="{{pathFor 'projectPage'}}" class="edit btn btn-default">Open</a>
       {{/if}}
     {{/if}}
   </div>
