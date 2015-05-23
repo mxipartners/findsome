@@ -85,14 +85,14 @@ body {
    margin: 0; }
    .measures li {
      display: block; }
-     .measures li .measures-content {
+     .measures li .item-content {
        display: inline-block;
        width: 90%; }
-       .measures li .measures-content h3 {
+       .measures li .item-content h3 {
          margin: 0;
          line-height: 1.4;
          font-size: 18px; }
-         .measures li .measures-content h3 span {
+         .measures li .item-content h3 span {
            font-weight: normal;
            font-size: 14px;
            display: inline-block;
@@ -109,14 +109,14 @@ body {
    margin: 0; }
    .risks li {
      display: block; }
-     .risks li .risks-content {
+     .risks li .item-content {
        display: inline-block;
        width: 90%; }
-       .risks li .risks-content h3 {
+       .risks li .item-content h3 {
          margin: 0;
          line-height: 1.4;
          font-size: 18px; }
-         .risks li .risks-content h3 span {
+         .risks li .item-content h3 span {
            font-weight: normal;
            font-size: 14px;
            display: inline-block;
@@ -133,14 +133,14 @@ body {
   margin: 0; }
   .findings li {
     display: block; }
-    .findings li .findings-content {
+    .findings li .item-content {
       display: inline-block;
       width: 90%; }
-      .findings li .findings-content h3 {
+      .findings li .item-content h3 {
         margin: 0;
         line-height: 1.4;
         font-size: 18px; }
-        .findings li .findings-content h3 span {
+        .findings li .item-content h3 span {
           font-weight: normal;
           font-size: 14px;
           display: inline-block;
@@ -157,14 +157,14 @@ body {
   margin: 0; }
   .sources li {
     display: block; }
-    .sources li .sources-content {
+    .sources li .item-content {
       display: inline-block;
       width: 90%; }
-      .sources li .sources-content h3 {
+      .sources li .item-content h3 {
         margin: 0;
         line-height: 1.4;
         font-size: 18px; }
-        .sources li .sources-content h3 span {
+        .sources li .item-content h3 span {
           font-weight: normal;
           font-size: 14px;
           display: inline-block;

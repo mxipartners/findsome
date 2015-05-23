@@ -31,7 +31,7 @@
       <div role="tabpanel" class="tab-pane fade active in" id="sources" aria-labelled-by="sources">
         <ul class="sources">
           {{#each sources}}
-            {{> sourceItem}}
+            {{> item}}
           {{/each}}
         </ul>
         {{> sourceSubmit}}
@@ -40,7 +40,7 @@
         {{#if has_sources}}
           <ul class="findings">
             {{#each findings}}
-              {{> findingItem}}
+              {{> item}}
             {{/each}}
           </ul>
           {{> findingSubmit}}
@@ -54,7 +54,7 @@
         {{#if has_findings}}
           <ul class="risks">
             {{#each risks}}
-              {{> riskItem}}
+              {{> item}}
             {{/each}}
           </ul>
           {{> riskSubmit}}
@@ -68,7 +68,7 @@
         {{#if has_risks}}
           <ul class="measures">
             {{#each measures}}
-              {{> measureItem}}
+              {{> item}}
             {{/each}}
           </ul>
           {{> measureSubmit}}
