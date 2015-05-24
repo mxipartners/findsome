@@ -4,7 +4,7 @@ Template.measureEdit.created = function() {
 
 Template.measureEdit.rendered = function() {
   $(".risk-select").select2({
-    placeholder: "Select risks"
+    placeholder: TAPi18n.__("Select risks")
   });
 };
 
@@ -58,6 +58,12 @@ Template.measureEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  }
+});
+
+Template.deleteMeasure.helpers({
+  translated_kind: function() {
+    return TAPi18n.__(this.kind);
   }
 });
 

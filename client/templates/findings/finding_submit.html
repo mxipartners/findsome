@@ -1,10 +1,10 @@
 <template name="findingSubmit">
   <form name="finding" class="finding-form form">
     {{> titleControl control_id='finding_title' title='' kind='finding'}}
-    {{> descriptionControl control_id='finding_description' description=''}}
+    {{> descriptionControl description='' kind='finding'}}
     <div class="form-group {{errorClass 'sources'}}">
       <div class="controls">
-        <label for="sources">Sources</label>
+        <label for="sources">{{_ "Sources"}}</label>
         <select name="sources" multiple="multiple" class="form-control source-select">
           {{#each sources}}
             <option value="{{_id}}">{{title}}</option>
@@ -13,6 +13,6 @@
         <span class="help-block">{{errorMessage 'sources'}}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Add finding</button>
+    <button type="submit" class="btn btn-primary">{{_ "Submit"}}</button>
   </form>
 </template>

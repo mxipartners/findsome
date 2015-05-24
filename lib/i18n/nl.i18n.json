@@ -1,0 +1,53 @@
+{
+  "Delete": "Verwijder",
+  "delete_kind": "Verwijder %s?",
+  "Description": "Beschrijving",
+  "description_placeholder": "Beschrijving van uw %s",
+  "Edit": "Bewerk",
+  "If this is your first time here, join by creating an account":
+    "Als u hier voor het eerst bent, maak dan een account aan",
+  "item_added_notification": "%s voegde %s %s toe aan %s",
+  "finding": "bevinding",
+  "Findings": "Bevindingen",
+  "measure": "maatregel",
+  "Measures": "Maatregelen",
+  "New project": "Nieuw project",
+  "No notifications": "Geen meldingen",
+  "Notifications": "Meldingen",
+  "Open": "Open",
+  "page_not_found": "Sorry, we konden geen pagina vinden op dit adres.",
+  "Please provide a title": "Vul een titel in",
+  "Please select at least one project member":
+    "Selecteer ten minste één projectlid",
+  "Please select one or more findings for the risk":
+    "Selecteer één of meer bevindingen voor het risico",
+  "Please select one or more risks that the measure addresses":
+    "Selecteer één of meer risico's die de maatregel mitigeert",
+  "Please select one or more sources for the finding":
+    "Selecteer één of meer bronnen voor de bevinding",
+  "Please sign in to access your projects":
+    "Log in om toegang te krijgen tot uw projecten",
+  "Project members": "Projectleden",
+  "Report": "Rapport",
+  "risk": "risico",
+  "Risks": "Risico's",
+  "Select findings": "Selectie van bevindingen",
+  "Select project members": "Selectie van projectleden",
+  "Select risks": "Selectie van risico's",
+  "Select sources": "Selectie van bronnen",
+  "source": "bron",
+  "Sources": "Bronnen",
+  "Submit": "Voeg toe",
+  "submitted_by": "Ingevoerd door <span class='author'>%s</span> op <span class='date'>%s</span>.",
+  "Title": "Titel",
+  "title_placeholder": "Titel van uw %s",
+  "Welcome!": "Welkom!",
+  "You need to add findings before you can add risks":
+    "U moet bevindingen toevoegen voordat u risico's kan toevoegen",
+  "You need to add risks before you can add measures":
+  "U moet risico's toevoegen voordat u maatregelen kan toevoegen",
+  "You need to add sources before you can add findings":
+    "U moet bronnen toevoegen voordat u bevindingen kan toevoegen",
+  "You need to add sources before you can generate a report":
+    "U moet bronnen toevoegen voordat een rapport kan worden gemaakt"
+}

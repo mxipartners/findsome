@@ -3,27 +3,27 @@
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active">
         <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
-          Sources
+          {{_ "Sources"}}
         </a>
       </li>
       <li role="presentation">
         <a href="#findings" aria-controls="findings" role="tab" data-toggle="tab">
-          Findings
+          {{_ "Findings"}}
         </a>
       </li>
       <li role="presentation">
         <a href="#risks" aria-controls="risks" role="tab" data-toggle="tab">
-          Risks
+          {{_ "Risks"}}
         </a>
       </li>
       <li role="presentation">
         <a href="#measures" aria-controls="measures" role="tab" data-toggle="tab">
-          Measures
+          {{_ "Measures"}}
         </a>
       </li>
       <li role="presentation">
         <a href="#report" aria-controls="report" role="tab" data-toggle="tab">
-          Report
+          {{_ "Report"}}
         </a>
       </li>
     </ul>
@@ -46,7 +46,7 @@
           {{> findingSubmit}}
         {{else}}
           <div class="jumbotron">
-            <p>You need to add sources before you can add findings.</p>
+            <p>{{_ "You need to add sources before you can add findings"}}.</p>
           </div>
         {{/if}}
       </div>
@@ -60,7 +60,7 @@
           {{> riskSubmit}}
         {{else}}
           <div class="jumbotron">
-            <p>You need to add findings before you can add risks.</p>
+            <p>{{_ "You need to add findings before you can add risks"}}.</p>
           </div>
         {{/if}}
       </div>
@@ -74,7 +74,7 @@
           {{> measureSubmit}}
         {{else}}
           <div class="jumbotron">
-            <p>You need to add risks before you can add measures.</p>
+            <p>{{_ "You need to add risks before you can add measures"}}.</p>
           </div>
         {{/if}}
       </div>

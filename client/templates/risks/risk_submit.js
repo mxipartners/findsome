@@ -4,7 +4,7 @@ Template.riskSubmit.created = function() {
 
 Template.riskSubmit.rendered = function() {
   $(".finding-select").select2({
-    placeholder: "Select findings"
+    placeholder: TAPi18n.__("Select findings")
   });
 };
 

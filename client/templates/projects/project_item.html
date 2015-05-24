@@ -2,19 +2,13 @@
   <div class="project bg-info">
     <div class="project-content">
       <h3>{{title}} <span>{{description}}</span></h3>
-      <p>
-        {{pluralize members.length "project member"}} entered
-        {{pluralize sourcesCount "source"}},
-        {{pluralize findingsCount "finding"}}, {{pluralize risksCount "risk"}},
-        and {{pluralize measuresCount "measure"}}.
-      </p>
       {{> submittedAuthorDate}}
     </div>
     {{#if currentUser}}
       {{#if projectItemIsOpen}}
-        <a href="{{pathFor 'projectEdit'}}" class="edit btn btn-default">Edit</a>
+        <a href="{{pathFor 'projectEdit'}}" class="edit btn btn-default">{{_ "Edit"}}</a>
       {{else}}
-        <a href="{{pathFor 'projectPage'}}" class="edit btn btn-default">Open</a>
+        <a href="{{pathFor 'projectPage'}}" class="edit btn btn-default">{{_ "Open"}}</a>
       {{/if}}
     {{/if}}
   </div>

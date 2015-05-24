@@ -1,6 +1,6 @@
 <template name="notifications">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    Notifications
+    {{_ "Notifications"}}
     {{#if notificationCount}}
       <span class="badge badge-inverse">{{notificationCount}}</span>
     {{/if}}
@@ -12,7 +12,7 @@
         {{> notificationItem}}
       {{/each}}
     {{else}}
-      <li><span>No Notifications</span></li>
+      <li><span>{{_ "No notifications"}}</span></li>
     {{/if}}
   </ul>
 </template>

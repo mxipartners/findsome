@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav">
           {{#if currentUser}}
             <li>
-              <a href="{{pathFor 'projectNew'}}">New project</a>
+              <a href="{{pathFor 'projectNew'}}">{{_ "New project"}}</a>
             </li>
             <li class="dropdown">
               {{> notifications}}
@@ -22,6 +22,11 @@
           {{/if}}
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <form class="navbar-form">
+              {{> i18n_dropdown}}
+          </form>
+          </li>
           {{> loginButtons}}
         </ul>
       </div>

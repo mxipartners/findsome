@@ -4,7 +4,7 @@ Template.findingSubmit.created = function() {
 
 Template.findingSubmit.rendered = function() {
   $(".source-select").select2({
-    placeholder: "Select sources"
+    placeholder: TAPi18n.__("Select sources")
   });
 };
 

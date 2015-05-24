@@ -36,6 +36,12 @@ Template.sourceEdit.events({
   }
 });
 
+Template.deleteSource.helpers({
+  translated_kind: function() {
+    return TAPi18n.__(this.kind);
+  }
+});
+
 Template.deleteSource.events({
   'click .delete': function(e) {
     var projectId = this.projectId;

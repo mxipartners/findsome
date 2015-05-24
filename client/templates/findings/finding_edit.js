@@ -4,7 +4,7 @@ Template.findingEdit.created = function() {
 
 Template.findingEdit.rendered = function() {
   $(".source-select").select2({
-    placeholder: "Select sources"
+    placeholder: TAPi18n.__("Select sources")
   });
 };
 
@@ -58,6 +58,12 @@ Template.findingEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  }
+});
+
+Template.deleteFinding.helpers({
+  translated_kind: function() {
+    return TAPi18n.__(this.kind);
   }
 });
 

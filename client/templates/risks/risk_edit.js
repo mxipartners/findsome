@@ -4,7 +4,7 @@ Template.riskEdit.created = function() {
 
 Template.riskEdit.rendered = function() {
   $(".finding-select").select2({
-    placeholder: "Select findings"
+    placeholder: TAPi18n.__("Select findings")
   });
 };
 
@@ -58,6 +58,12 @@ Template.riskEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  }
+});
+
+Template.deleteRisk.helpers({
+  translated_kind: function() {
+    return TAPi18n.__(this.kind);
   }
 });
 

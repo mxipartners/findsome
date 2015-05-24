@@ -1,5 +1,5 @@
 Template.submittedAuthorDate.helpers({
-  submittedText: function() {
+  submittedDate: function() {
     return this.submitted.toString();
   }
 });

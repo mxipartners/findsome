@@ -1,8 +1,9 @@
 <template name="descriptionControl">
   <div class="form-group">
     <div class="controls">
-      <label for="description">Description</label>
+      <label for="description">{{_ "Description"}}</label>
       <textarea name="description" id="{{control_id}}" class="form-control"
+                placeholder="{{_ 'description_placeholder' translated_kind}}"
                 rows="3" value="{{description}}">{{description}}</textarea>
     </div>
   </div>

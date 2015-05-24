@@ -1,0 +1,8 @@
+{
+  "delete_kind": "Delete %s?",
+  "description_placeholder": "Describe your %s",
+  "item_added_notification": "%s added %s %s to %s",
+  "page_not_found": "Sorry, we couldn't find a page at this address.",
+  "submitted_by": "Submitted by <span class='author'>%s</span> on <span class='date'>%s</span>.",
+  "title_placeholder": "Name your %s"
+}

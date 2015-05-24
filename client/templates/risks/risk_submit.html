@@ -1,10 +1,10 @@
 <template name="riskSubmit">
   <form name="risk" class="risk-form form">
     {{> titleControl control_id='risk_title' title='' kind='risk'}}
-    {{> descriptionControl control_id='risk_description' description=''}}
+    {{> descriptionControl description='' kind='risk'}}
     <div class="form-group {{errorClass 'findings'}}">
       <div class="controls">
-        <label for="findings">Findings</label>
+        <label for="findings">{{_ "Findings"}}</label>
         <select name="findings" multiple="multiple" class="form-control finding-select">
           {{#each findings}}
             <option value="{{_id}}">{{title}}</option>
@@ -13,6 +13,6 @@
         <span class="help-block">{{errorMessage 'findings'}}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Add risk</button>
+    <button type="submit" class="btn btn-primary">{{_ "Submit"}}</button>
   </form>
 </template>

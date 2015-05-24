@@ -4,7 +4,7 @@ Template.projectNew.created = function() {
 
 Template.projectNew.rendered = function() {
   $(".member-select").select2({
-    placeholder: "Select project members"
+    placeholder: TAPi18n.__("Select project members")
   });
 };
 

@@ -1,9 +1,9 @@
 <template name="titleControl">
   <div class="form-group {{errorClass 'title'}}">
     <div class="controls">
-      <label for="title">Title</label>
+      <label for="title">{{_ "Title"}}</label>
       <input name="title" id="{{control_id}}" type="text" value="{{title}}"
-             placeholder="Name your {{kind}}" class="form-control"/>
+             placeholder="{{_ 'title_placeholder' translated_kind}}" class="form-control"/>
       <span class="help-block">{{errorMessage 'title'}}</span>
     </div>
   </div>

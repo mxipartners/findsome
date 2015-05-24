@@ -4,7 +4,7 @@ Template.measureSubmit.created = function() {
 
 Template.measureSubmit.rendered = function() {
   $(".risk-select").select2({
-    placeholder: "Select risks"
+    placeholder: TAPi18n.__("Select risks")
   });
 };
 

@@ -8,5 +8,8 @@ Template.titleControl.helpers({
   },
   errorClass: function (field) {
     return !!Session.get(Template.currentData().control_id)[field] ? 'has-error' : '';
+  },
+  translated_kind: function() {
+    return TAPi18n.__(this.kind);
   }
 });
