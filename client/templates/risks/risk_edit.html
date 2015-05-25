@@ -14,8 +14,10 @@
       </div>
     </div>
     <button type="submit" class="btn btn-primary submit">{{_ "Submit"}}</button>
-    <hr/>
-    <a data-toggle="modal" class="btn btn-danger delete" href="#deleteRisk">{{_ "Delete"}}</a>
+    {{#if hasNoMeasures}}
+      <hr/>
+      <a data-toggle="modal" class="btn btn-danger delete" href="#deleteRisk">{{_ "Delete"}}</a>
+    {{/if}}
   </form>
   {{>deleteRisk}}
 </template>

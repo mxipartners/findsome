@@ -21,6 +21,9 @@ Template.riskEdit.helpers({
   findingIsSelected: function() {
     var risk = Template.parentData();
     return risk.findings.indexOf(this._id) > -1;
+  },
+  hasNoMeasures: function() {
+    return Measures.find({risks: this._id}).count() == 0;
   }
 });
 

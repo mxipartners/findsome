@@ -21,6 +21,9 @@ Template.findingEdit.helpers({
   sourceIsSelected: function() {
     var finding = Template.parentData();
     return finding.sources.indexOf(this._id) > -1;
+  },
+  hasNoRisks: function() {
+    return Risks.find({findings: this._id}).count() == 0;
   }
 });
 
