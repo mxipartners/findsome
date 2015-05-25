@@ -70,7 +70,6 @@ Template.deleteRisk.helpers({
 Template.deleteRisk.events({
   'click .delete': function(e) {
     var projectId = this.projectId;
-    Projects.update(projectId, {$inc: {risksCount: -1}});
     Risks.remove(this._id);
     // Make sure the backdrop is hidden before we go to the project page.
     $('#deleteRisk').on('hidden.bs.modal', function() {

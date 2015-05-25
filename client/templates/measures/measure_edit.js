@@ -70,7 +70,6 @@ Template.deleteMeasure.helpers({
 Template.deleteMeasure.events({
   'click .delete': function(e) {
     var projectId = this.projectId;
-    Projects.update(projectId, {$inc: {measuresCount: -1}});
     Measures.remove(this._id);
     // Make sure the backdrop is hidden before we go to the project page.
     $('#deleteMeasure').on('hidden.bs.modal', function() {

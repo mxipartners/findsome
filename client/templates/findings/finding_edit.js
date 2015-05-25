@@ -70,7 +70,6 @@ Template.deleteFinding.helpers({
 Template.deleteFinding.events({
   'click .delete': function(e) {
     var projectId = this.projectId;
-    Projects.update(projectId, {$inc: {findingsCount: -1}});
     Findings.remove(this._id);
     // Make sure the backdrop is hidden before we go to the project page.
     $('#deleteFinding').on('hidden.bs.modal', function() {

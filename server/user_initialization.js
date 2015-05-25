@@ -11,10 +11,6 @@ Accounts.onCreateUser(function(options, user) {
     userId: user._id,
     author: user.username,
     submitted: new Date(),
-    measuresCount: 0,
-    risksCount: 0,
-    findingsCount: 0,
-    sourcesCount: 0,
     kind: 'project'
   };
   Projects.insert(tutorial);
