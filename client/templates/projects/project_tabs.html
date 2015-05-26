@@ -29,18 +29,22 @@
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane fade active in" id="sources" aria-labelled-by="sources">
-        <ul class="sources">
+        <ul class="items">
           {{#each sources}}
-            {{> item}}
+            <li>
+              {{> item}}
+            </li>
           {{/each}}
         </ul>
         {{> sourceSubmit}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="findings" aria-labelled-by="findings">
         {{#if has_sources}}
-          <ul class="findings">
+          <ul class="items">
             {{#each findings}}
-              {{> item}}
+              <li>
+                {{> item}}
+              </li>
             {{/each}}
           </ul>
           {{> findingSubmit}}
@@ -52,9 +56,11 @@
       </div>
       <div role="tabpanel" class="tab-pane fade" id="risks" aria-labelled-by="risks">
         {{#if has_findings}}
-          <ul class="risks">
+          <ul class="items">
             {{#each risks}}
-              {{> item}}
+              <li>
+                {{> item}}
+              </li>
             {{/each}}
           </ul>
           {{> riskSubmit}}
@@ -66,9 +72,11 @@
       </div>
       <div role="tabpanel" class="tab-pane fade" id="measures" aria-labelled-by="measures">
         {{#if has_risks}}
-          <ul class="measures">
+          <ul class="items">
             {{#each measures}}
-              {{> item}}
+              <li>
+                {{> item}}
+              </li>
             {{/each}}
           </ul>
           {{> measureSubmit}}

@@ -1,9 +1,7 @@
 <template name="item">
-  <li>
-    <div class="item-content">
-      <h3>{{title}} <span>{{description}}</span></h3>
-      {{> submittedAuthorDate}}
-    </div>
-    <button type="button" class="btn btn-default edit">{{_ "Edit"}}</button>
-  </li>
+  <div class="item-content">
+    <h3>{{title}} <span>{{description}}</span></h3>
+    {{> submittedAuthorDate}}
+  </div>
+  <button type="button" class="btn btn-default edit">{{_ "Edit"}}</button>
 </template>

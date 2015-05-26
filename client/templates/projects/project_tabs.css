@@ -1,0 +1,11 @@
+.items {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+  margin: 0; }
+  .items li {
+    display: block; }
+    .items li .edit {
+      display: block;
+      float: right;
+      margin-top: 7px; }

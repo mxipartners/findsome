@@ -1,0 +1,15 @@
+.item-content {
+  display: inline-block;
+  width: 90%;
+}
+  .item-content h3 {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 18px;
+  }
+    .item-content h3 span {
+      font-weight: normal;
+      font-size: 14px;
+      display: inline-block;
+      color: #aaaaaa;
+    }

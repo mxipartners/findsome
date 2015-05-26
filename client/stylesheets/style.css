@@ -1,4 +1,4 @@
-.grid-block, .main, .project, .measures li, .measure-form, .risks li, .risk-form, .findings li, .finding-form, .sources li, .source-form {
+.grid-block, .main, .project, .items li, .item-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -14,17 +14,12 @@ body {
 #main {
   position: relative;
 }
+
 .page {
   position: absolute;
   top: 0px;
   width: 100%;
 }
-
-.navbar {
-  margin-bottom: 10px; }
-  /* line 32, ../sass/style.scss */
-  .navbar .navbar-inner {
-    border-radius: 0px 0px 3px 3px; }
 
 #spinner {
   height: 300px; }
@@ -73,75 +68,6 @@ body {
     float: right;
     margin-top: 7px; }
 
- .submitted-author-date {
-   font-size: 12px;
-   color: #aaaaaa;
- }
-
-li .item-content {
-  display: inline-block;
-  width: 90%;
-}
-  li .item-content h3 {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 18px;
-  }
-    li .item-content h3 span {
-      font-weight: normal;
-      font-size: 14px;
-      display: inline-block;
-      color: #aaaaaa;
-    }
-
- .measures {
-   list-style-type: none;
-   padding-left: 0;
-   font-size: 16px;
-   margin: 0; }
-   .measures li {
-     display: block; }
-     .measures li .edit {
-       display: block;
-       float: right;
-       margin-top: 7px; }
-
- .risks {
-   list-style-type: none;
-   padding-left: 0;
-   font-size: 16px;
-   margin: 0; }
-   .risks li {
-     display: block; }
-     .risks li .edit {
-       display: block;
-       float: right;
-       margin-top: 7px; }
-
-.findings {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 16px;
-  margin: 0; }
-  .findings li {
-    display: block; }
-    .findings li .edit {
-      display: block;
-      float: right;
-      margin-top: 7px; }
-
-.sources {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 16px;
-  margin: 0; }
-  .sources li {
-    display: block; }
-    .sources li .edit {
-      display: block;
-      float: right;
-      margin-top: 7px; }
-
 .dropdown-menu span {
   display: block;
   padding: 3px 20px;
@@ -150,26 +76,15 @@ li .item-content {
   color: #bbb;
   white-space: nowrap; }
 
-.load-more {
-  display: block;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.05);
-  text-align: center;
-  height: 60px;
-  line-height: 60px;
-  margin-bottom: 10px; }
-  .load-more:hover {
-    text-decoration: none;
-    background: rgba(0, 0, 0, 0.1); }
-
 .projects .spinner-container{
   position: relative;
   height: 100px;
 }
 
-.jumbotron{
+.jumbotron {
   text-align: center;
 }
+
 .jumbotron h2{
   font-size: 60px;
   font-weight: 100;
@@ -187,25 +102,4 @@ li .item-content {
   10% {opacity: 1;}
   90% {opacity: 1;}
   100% {opacity: 0;}
-}
-
-.errors{
-  position: fixed;
-  z-index: 10000;
-  padding: 10px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  pointer-events: none;
-}
-.alert {
-          animation: fadeOut 2700ms ease-in 0s 1 forwards;
-  -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
-     -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
-  width: 250px;
-  float: right;
-  clear: both;
-  margin-bottom: 5px;
-  pointer-events: auto;
 }
