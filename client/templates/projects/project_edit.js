@@ -55,6 +55,9 @@ Template.projectEdit.events({
         Router.go('projectPage', {_id: currentProjectId});
       }
     });
+  },
+  'click .cancel': function(e) {
+    Router.go('projectPage', {_id: this._id});
   }
 });
 

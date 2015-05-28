@@ -13,9 +13,11 @@
         <span class="help-block">{{errorMessage 'risks'}}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary submit">{{_ "Submit"}}</button>
-    <hr/>
-    <a data-toggle="modal" class="btn btn-danger delete" href="#deleteMeasure">{{_ "Delete"}}</a>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+      <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteMeasure">{{_ "Delete"}}</a>
+    </div>
   </form>
   {{>deleteMeasure}}
 </template>

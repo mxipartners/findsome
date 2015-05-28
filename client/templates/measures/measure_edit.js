@@ -58,6 +58,10 @@ Template.measureEdit.events({
         Router.go('projectPage', {_id: projectId});
       }
     });
+  },
+  'click .cancel': function(e) {
+    Session.set('itemEdited', null);
+    Router.go('projectPage', {_id: this.projectId});
   }
 });
 

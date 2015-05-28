@@ -1,12 +1,14 @@
 <template name="sourceEdit">
   <form name="source" class="item-form form">
     {{> titleControl extendContext 'control_id' 'source_title'}}
-    {{>descriptionControl}}
-    <button type="submit" class="btn btn-primary submit">{{_ "Submit"}}</button>
-    {{#if hasNoFindings}}
-      <hr/>
-      <a data-toggle="modal" class="btn btn-danger delete" href="#deleteSource">{{_ "Delete"}}</a>
-    {{/if}}
+    {{> descriptionControl}}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+      {{#if hasNoFindings}}
+        <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteSource">{{_ "Delete"}}</a>
+      {{/if}}
+    </div>
   </form>
   {{> deleteSource}}
 </template>
@@ -23,7 +25,7 @@
           <p>{{description}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{_ "Cancel"}}</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{_ "Cancel"}}</button>
           <button type="button" class="btn btn-danger delete" data-dismiss="modal">{{_ "Delete"}}</button>
         </div>
       </div>

@@ -13,9 +13,11 @@
         <span class="help-block">{{errorMessage 'members'}}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary submit">{{_ "Submit"}}</button>
-    <hr/>
-    <a data-toggle="modal" class="btn btn-danger delete" href="#deleteProject">{{_ "Delete"}}</a>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+      <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteProject">{{_ "Delete"}}</a>
+    </div>
   </form>
   {{>deleteProject}}
 </template>
@@ -32,7 +34,7 @@
           <p>{{description}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{_ "Cancel"}}</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{_ "Cancel"}}</button>
           <button type="button" class="btn btn-danger delete" data-dismiss="modal">{{_ "Delete"}}</button>
         </div>
       </div>
