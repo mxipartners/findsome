@@ -1,3 +1,18 @@
+Template.projectTabs.onCreated(function() {
+  Session.setDefault('currentProjectTab', 'sources');
+});
+
+Template.projectTabs.onRendered(function() {
+  current = this.$('a[href="#' + Session.get('currentProjectTab') + '"]');
+  current.tab('show');
+});
+
+Template.projectTabs.events({
+  'shown.bs.tab': function(e) {
+    Session.set('currentProjectTab', e.target.href.split('#')[1]);
+  }
+});
+
 Template.projectTabs.helpers({
   sources: function() {
     return Sources.find({projectId: this._id});

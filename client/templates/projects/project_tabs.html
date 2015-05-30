@@ -1,7 +1,7 @@
 <template name="projectTabs">
   <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active">
+      <li role="presentation">
         <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
           {{_ "Sources"}} <span class="badge">{{sources_count}}</span>
         </a>
@@ -28,7 +28,7 @@
       </li>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade active in" id="sources" aria-labelled-by="sources">
+      <div role="tabpanel" class="tab-pane fade" id="sources" aria-labelled-by="sources">
         <ul class="items">
           {{#each sources}}
             <li>
