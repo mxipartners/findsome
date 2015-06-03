@@ -50,5 +50,8 @@ Template.projectNew.events({
 
       Router.go('projectPage', {_id: result._id});
     });
+  },
+  'click .cancel': function(e) {
+    Router.go('projectsList');
   }
 });
