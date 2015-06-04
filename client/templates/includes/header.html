@@ -14,7 +14,9 @@
         <ul class="nav navbar-nav">
           {{#if currentUser}}
             <li>
-              <a href="{{pathFor 'projectNew'}}">{{_ "New project"}}</a>
+              <a href="{{pathFor 'projectNew'}}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "New project"}}
+              </a>
             </li>
             <li class="dropdown">
               {{> notifications}}
