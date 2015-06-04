@@ -6,9 +6,13 @@
     </div>
     {{#if currentUser}}
       {{#if projectItemIsOpen}}
-        <a href="{{pathFor 'projectEdit'}}" class="edit btn btn-default">{{_ "Edit"}}</a>
+        <a href="{{pathFor 'projectEdit'}}" class="edit btn btn-default">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> {{_ "Edit"}}
+        </a>
       {{else}}
-        <a href="{{pathFor 'projectPage'}}" class="edit btn btn-default">{{_ "Open"}}</a>
+        <a href="{{pathFor 'projectPage'}}" class="edit btn btn-default">
+          <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;&nbsp;{{_ "Open"}}
+        </a>
       {{/if}}
     {{/if}}
   </div>

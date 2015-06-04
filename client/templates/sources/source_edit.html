@@ -6,7 +6,9 @@
       <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
       <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
       {{#if hasNoFindings}}
-        <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteSource">{{_ "Delete"}}</a>
+        <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteSource">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+        </a>
       {{/if}}
     </div>
   </form>
@@ -26,7 +28,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{_ "Cancel"}}</button>
-          <button type="button" class="btn btn-danger delete" data-dismiss="modal">{{_ "Delete"}}</button>
+          <button type="button" class="btn btn-danger delete" data-dismiss="modal">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+          </button>
         </div>
       </div>
     </div>
