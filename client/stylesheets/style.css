@@ -1,6 +1,6 @@
 html, body {
   height: 100%;
-  background-color: #eee;
+  background-color: #eee ! important;
   color: #666666; }
 
 .grid-block, .main, .project, .items li, .item-form {
