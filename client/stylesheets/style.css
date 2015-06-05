@@ -1,15 +1,16 @@
+html, body {
+  height: 100%;
+  background-color: #eee;
+  color: #666666; }
+
 .grid-block, .main, .project, .items li, .item-form {
-  background: #fff;
+  background-color: #fff;
   border-radius: 3px;
   padding: 10px;
   margin-bottom: 10px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
-
-body {
-  background: #eee;
-  color: #666666; }
 
 #main {
   position: relative;
@@ -75,11 +76,6 @@ body {
   line-height: 20px;
   color: #bbb;
   white-space: nowrap; }
-
-.projects .spinner-container{
-  position: relative;
-  height: 100px;
-}
 
 .jumbotron {
   text-align: center;
