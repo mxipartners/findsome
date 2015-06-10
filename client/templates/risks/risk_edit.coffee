@@ -7,7 +7,7 @@ Template.riskEdit.onRendered ->
 Template.riskEdit.helpers
   errorMessage: (field) -> Session.get('riskEditErrors')[field]
   errorClass: (field) ->
-    if !!Session.get('riskEditErrors')[field] then 'has-error' else ''
+    if Session.get('riskEditErrors')[field] then 'has-error' else ''
   findings: -> Findings.find()
   findingIsSelected: ->
     risk = Template.parentData()

@@ -8,7 +8,7 @@ Template.riskSubmit.onRendered ->
 Template.riskSubmit.helpers
   errorMessage: (field) -> Session.get('riskSubmitErrors')[field]
   errorClass: (field) ->
-    if !!Session.get('riskSubmitErrors')[field] then 'has-error' else ''
+    if Session.get('riskSubmitErrors')[field] then 'has-error' else ''
   findings: -> Findings.find()
 
 Template.riskSubmit.events

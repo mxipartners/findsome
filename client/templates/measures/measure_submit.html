@@ -2,7 +2,7 @@
   <form name="measure" class="item-form form">
     {{> titleControl control_id='measure_title' title='' kind='measure'}}
     {{> descriptionControl description='' kind='measure'}}
-    <div class="form-group {{errorClass 'measures'}}">
+    <div class="form-group {{errorClass 'risks'}}">
       <div class="controls">
         <label for="risks">{{_ "Risks"}}</label>
         <select name="risks" multiple="multiple" class="form-control risk-select">
@@ -10,7 +10,7 @@
             <option value="{{_id}}">{{title}}</option>
           {{/each}}
         </select>
-        <span class="help-block">{{errorMessage 'measures'}}</span>
+        <span class="help-block">{{errorMessage 'risks'}}</span>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">
