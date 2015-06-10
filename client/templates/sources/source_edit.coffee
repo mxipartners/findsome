@@ -1,8 +1,3 @@
-go_to_project = (projectId) ->
-  Session.set 'itemEdited', null
-  Router.go 'projectPage', _id: projectId
-
-
 Template.sourceEdit.helpers
   hasNoFindings: ->
     Findings.find({sources: this._id}).count() == 0
@@ -28,9 +23,9 @@ Template.sourceEdit.events
       if error
         throwError error.reason
       else
-        go_to_project this.projectId
+        stop_editing()
 
-  'click .cancel': (e) -> go_to_project this.projectId
+  'click .cancel': (e) -> stop_editing()
 
 
 Template.deleteSource.helpers
@@ -41,6 +36,4 @@ Template.deleteSource.events
   'click .delete': (e) ->
     Sources.remove this._id
     # Make sure the backdrop is hidden before we go to the project page.
-    $('#deleteSource').on('hidden.bs.modal', ->
-      go_to_project this.projectId
-    ).modal('hide')
+    $('#deleteSource').on('hidden.bs.modal', stop_editing).modal('hide')
