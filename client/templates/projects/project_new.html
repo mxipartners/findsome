@@ -1,7 +1,7 @@
 <template name="projectNew">
   <form name="project" class="main form page">
     {{> titleControl control_id='project_title' title='' kind='project'}}
-    {{> descriptionControl control_id='project_description' description=''}}
+    {{> descriptionControl control_id='project_description' description='' kind='project'}}
     <div class="form-group {{errorClass 'members'}}">
       <div class="controls">
         <label for="members">{{_ "Project members"}}</label>
