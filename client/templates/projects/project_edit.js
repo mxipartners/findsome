@@ -52,12 +52,12 @@ Template.projectEdit.events({
         // display the error to the user
         throwError(error.reason);
       } else {
-        Router.go('projectPage', {_id: currentProjectId});
+        stop_editing();
       }
     });
   },
   'click .cancel': function(e) {
-    Router.go('projectPage', {_id: this._id});
+    stop_editing();
   }
 });
 

@@ -46,5 +46,8 @@ Template.projectTabs.helpers({
   },
   has_risks: function() {
     return Risks.find({projectId: this._id}).count() > 0;
+  },
+  item_is_edited: function() {
+    return Session.get('itemEdited') == this._id;
   }
 });

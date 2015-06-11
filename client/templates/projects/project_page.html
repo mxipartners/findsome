@@ -1,21 +1,10 @@
 <template name="projectPage">
   <div class="project-page page">
-    {{> projectItem extendContext 'projectItemIsOpen' true}}
-    {{#with itemEdited}}
-      {{#if kindIs 'source'}}
-        {{> sourceEdit}}
-      {{/if}}
-      {{#if kindIs 'finding'}}
-        {{> findingEdit}}
-      {{/if}}
-      {{#if kindIs 'risk'}}
-        {{> riskEdit}}
-      {{/if}}
-      {{#if kindIs 'measure'}}
-        {{> measureEdit}}
-      {{/if}}
+    {{#if item_is_edited}}
+      {{> projectEdit}}
     {{else}}
-      {{> projectTabs}}
-    {{/with}}
+      {{> projectItem extendContext 'projectItemIsOpen' true}}
+    {{/if}}
+    {{> projectTabs}}
   </div>
 </template>
