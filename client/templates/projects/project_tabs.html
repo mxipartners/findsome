@@ -29,24 +29,16 @@
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane fade" id="sources" aria-labelled-by="sources">
-        <ul class="items">
-          {{#each sources}}
-            <li>
-              {{> item}}
-            </li>
-          {{/each}}
-        </ul>
+        {{#each sources}}
+            {{> item}}
+        {{/each}}
         {{> sourceSubmit}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="findings" aria-labelled-by="findings">
         {{#if has_sources}}
-          <ul class="items">
-            {{#each findings}}
-              <li>
-                {{> item}}
-              </li>
-            {{/each}}
-          </ul>
+          {{#each findings}}
+              {{> item}}
+          {{/each}}
           {{> findingSubmit}}
         {{else}}
           <div class="jumbotron">
@@ -56,13 +48,9 @@
       </div>
       <div role="tabpanel" class="tab-pane fade" id="risks" aria-labelled-by="risks">
         {{#if has_findings}}
-          <ul class="items">
-            {{#each risks}}
-              <li>
-                {{> item}}
-              </li>
-            {{/each}}
-          </ul>
+          {{#each risks}}
+              {{> item}}
+          {{/each}}
           {{> riskSubmit}}
         {{else}}
           <div class="jumbotron">
@@ -72,13 +60,9 @@
       </div>
       <div role="tabpanel" class="tab-pane fade" id="measures" aria-labelled-by="measures">
         {{#if has_risks}}
-          <ul class="items">
-            {{#each measures}}
-              <li>
-                {{> item}}
-              </li>
-            {{/each}}
-          </ul>
+          {{#each measures}}
+              {{> item}}
+          {{/each}}
           {{> measureSubmit}}
         {{else}}
           <div class="jumbotron">

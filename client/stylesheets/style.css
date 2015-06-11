@@ -3,7 +3,7 @@ html, body {
   background-color: #eee ! important;
   color: #666666; }
 
-.grid-block, .main, .project, .items li, .item-form {
+.grid-block, .main, .project, .item, .item-form {
   background-color: #fff;
   border-radius: 3px;
   padding: 10px;
