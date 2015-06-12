@@ -21,4 +21,3 @@ Template.projectTabs.helpers
   has_sources: -> Sources.find({projectId: this._id}).count() > 0
   has_findings: -> Findings.find({projectId: this._id}).count() > 0
   has_risks: -> Risks.find({projectId: this._id}).count() > 0
-  item_is_edited: -> Session.get('itemEdited') == this._id
