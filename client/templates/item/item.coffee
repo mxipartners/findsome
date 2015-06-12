@@ -1,4 +1,4 @@
 Template.item.events
   'click .edit': (e) ->
     e.preventDefault()
-    Session.set 'itemEdited', this._id
+    start_editing(this)
