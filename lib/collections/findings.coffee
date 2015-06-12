@@ -18,7 +18,6 @@ Meteor.methods
       throw new Meteor.Error('invalid-finding', 'You must add a finding to a project')
     finding = _.extend findingAttributes,
       userId: user._id
-      author: user.username
       submitted: new Date()
       kind: 'finding'
     # Create the finding, save the id

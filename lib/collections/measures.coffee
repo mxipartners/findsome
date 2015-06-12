@@ -18,7 +18,6 @@ Meteor.methods
       throw new Meteor.Error('invalid-measure', 'You must add a measure to a project')
     measure = _.extend measureAttributes,
       userId: user._id
-      author: user.username
       submitted: new Date()
       kind: 'measure'
     # Create the measure, save the id

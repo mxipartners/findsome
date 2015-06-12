@@ -18,7 +18,6 @@ Meteor.methods
       throw new Meteor.Error('invalid-risk', 'You must add a risk to a project')
     risk = _.extend riskAttributes,
       userId: user._id
-      author: user.username
       submitted: new Date()
       kind: 'risk'
     # Create the risk, save the id

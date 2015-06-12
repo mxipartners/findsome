@@ -26,7 +26,6 @@ Meteor.methods
       throw new Meteor.Error('invalid-source', 'You must add a source to a project')
     source = _.extend sourceAttributes,
       userId: user._id
-      author: user.username
       submitted: new Date()
       kind: 'source'
     # Create the source, save the id

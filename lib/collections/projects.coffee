@@ -39,7 +39,6 @@ Meteor.methods
     user = Meteor.user()
     project = _.extend projectAttributes,
       userId: user._id
-      author: user.username
       submitted: new Date()
       kind: 'project'
     projectId = Projects.insert project
