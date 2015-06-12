@@ -4,7 +4,6 @@ Measures.allow
   update: (userId, measure) -> ownsProjectItem userId, measure
   remove: (userId, measure) -> ownsProjectItem userId, measure
 
-
 Meteor.methods
   measureInsert: (measureAttributes) ->
     check this.userId, String
@@ -13,7 +12,6 @@ Meteor.methods
       title: String
       description: String
       risks: Array
-
     user = Meteor.user()
     project = Projects.findOne measureAttributes.projectId
     if not project
@@ -29,7 +27,6 @@ Meteor.methods
     text = user.username + ' added measure ' + measure.title + ' to ' + project.title
     createNotification(member, user._id, measure.projectId, text) for member in project.members
     return measure._id
-
 
 @validateMeasure = (measure) ->
   errors = {}

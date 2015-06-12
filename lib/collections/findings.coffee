@@ -4,7 +4,6 @@ Findings.allow
   update: (userId, finding) -> ownsProjectItem userId, finding
   remove: (userId, finding) -> ownsProjectItem userId, finding
 
-
 Meteor.methods
   findingInsert: (findingAttributes) ->
     check this.userId, String
