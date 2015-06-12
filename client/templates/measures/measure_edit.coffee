@@ -50,6 +50,8 @@ Template.deleteMeasure.helpers
 
 Template.deleteMeasure.events
   'click .delete': (e) ->
-    Measures.remove this._id
-    # Make sure the backdrop is hidden before we go to the project page.
-    $('#deleteMeasure').on('hidden.bs.modal', stop_editing).modal('hide')
+    delete_measure = =>
+      Measures.remove this._id
+      stop_editing()
+    # Make sure the backdrop is hidden before we do anything.
+    $('#deleteMeasure').modal('hide').on('hidden.bs.modal', delete_measure)

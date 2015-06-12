@@ -52,6 +52,8 @@ Template.deleteRisk.helpers
 
 Template.deleteRisk.events
   'click .delete': (e) ->
-    Risks.remove this._id
-    # Make sure the backdrop is hidden before we go to the project page.
-    $('#deleteRisk').on('hidden.bs.modal', stop_editing).modal('hide')
+    delete_risk = =>
+      Risks.remove this._id
+      stop_editing()
+    # Make sure the backdrop is hidden before we do anything.
+    $('#deleteRisk').modal('hide').on('hidden.bs.modal', delete_risk)

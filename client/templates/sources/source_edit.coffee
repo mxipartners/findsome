@@ -34,6 +34,8 @@ Template.deleteSource.helpers
 
 Template.deleteSource.events
   'click .delete': (e) ->
-    Sources.remove this._id
-    # Make sure the backdrop is hidden before we go to the project page.
-    $('#deleteSource').on('hidden.bs.modal', stop_editing).modal('hide')
+    delete_source = =>
+      Sources.remove this._id
+      stop_editing()
+    # Make sure the backdrop is hidden before we do anything.
+    $('#deleteSource').modal('hide').on('hidden.bs.modal', delete_source)
