@@ -5,6 +5,9 @@
 .item:after {
   clear: both; }
 
+.item:hover {
+  background-color: #fcfcff; }
+
   .item .item-content {
     float: left; }
 

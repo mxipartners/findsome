@@ -36,6 +36,8 @@ html, body {
     display: table; }
   .project:after {
     clear: both; }
+  .project:hover {
+    background-color: #fcfcff; }
   .project.invisible {
     opacity: 0; }
   .project.instant {
