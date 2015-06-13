@@ -19,6 +19,7 @@ Meteor.methods
     measure = _.extend measureAttributes,
       userId: user._id
       submitted: new Date()
+      position: Measures.find({projectId: measureAttributes.projectId}).count()
       kind: 'measure'
     # Create the measure, save the id
     measure._id = Measures.insert measure

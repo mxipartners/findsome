@@ -19,6 +19,7 @@ Meteor.methods
     risk = _.extend riskAttributes,
       userId: user._id
       submitted: new Date()
+      position: Risks.find({projectId: riskAttributes.projectId}).count()
       kind: 'risk'
     # Create the risk, save the id
     risk._id = Risks.insert risk

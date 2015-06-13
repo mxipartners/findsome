@@ -1,12 +1,14 @@
 <template name="findingsList">
   {{#if has_sources}}
-    {{#each findings}}
-      {{#if item_is_edited}}
-        {{> findingEdit}}
-      {{else}}
-        {{> item}}
-      {{/if}}
-    {{/each}}
+    <div class="sortable">
+      {{#each findings}}
+        {{#if item_is_edited}}
+          {{> findingEdit}}
+        {{else}}
+          {{> item}}
+        {{/if}}
+      {{/each}}
+    </div>
     {{> findingSubmit}}
   {{else}}
     <div class="jumbotron">

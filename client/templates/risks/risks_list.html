@@ -1,12 +1,14 @@
 <template name="risksList">
   {{#if has_findings}}
-    {{#each risks}}
-      {{#if item_is_edited}}
-        {{> riskEdit}}
-      {{else}}
-        {{> item}}
-      {{/if}}
-    {{/each}}
+    <div class="sortable">
+      {{#each risks}}
+        {{#if item_is_edited}}
+          {{> riskEdit}}
+        {{else}}
+          {{> item}}
+        {{/if}}
+      {{/each}}
+    </div>
     {{> riskSubmit}}
   {{else}}
     <div class="jumbotron">

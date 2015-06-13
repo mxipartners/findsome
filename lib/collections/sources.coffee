@@ -27,6 +27,7 @@ Meteor.methods
     source = _.extend sourceAttributes,
       userId: user._id
       submitted: new Date()
+      position: Sources.find({projectId: sourceAttributes.projectId}).count()
       kind: 'source'
     # Create the source, save the id
     source._id = Sources.insert source

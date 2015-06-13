@@ -19,6 +19,7 @@ Meteor.methods
     finding = _.extend findingAttributes,
       userId: user._id
       submitted: new Date()
+      position: Findings.find({projectId: findingAttributes.projectId}).count()
       kind: 'finding'
     # Create the finding, save the id
     finding._id = Findings.insert finding

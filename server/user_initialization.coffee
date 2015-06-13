@@ -19,6 +19,7 @@ Accounts.onCreateUser (options, user) ->
       based on this source."
     projectId: projectId
     userId: user._id
+    position: 0
     submitted: new Date
     kind: 'source'
   source1Id = Sources.insert source1
@@ -29,6 +30,7 @@ Accounts.onCreateUser (options, user) ->
       source."
     projectId: projectId
     userId: user._id
+    position: 1
     submitted: new Date
     kind: 'source'
   source2Id = Sources.insert source2
@@ -39,6 +41,7 @@ Accounts.onCreateUser (options, user) ->
       well as on the interview with the project lead."
     projectId: projectId
     userId: user._id
+    position: 0
     submitted: new Date
     kind: 'finding'
     sources: [source1Id, source2Id]
@@ -50,6 +53,7 @@ Accounts.onCreateUser (options, user) ->
       the interview with the project lead."
     projectId: projectId
     userId: user._id
+    position: 1
     submitted: new Date
     kind: 'finding'
     sources: [source1Id]
@@ -60,6 +64,7 @@ Accounts.onCreateUser (options, user) ->
       tests, there is a risk that changes to the software will cause bugs."
     projectId: projectId
     userId: user._id
+    position: 0
     submitted: new Date
     kind: 'risk'
     findings: [finding2Id]
@@ -71,6 +76,7 @@ Accounts.onCreateUser (options, user) ->
       cause bugs. Creating an automated regression test can mitigate this risk."
     projectId: projectId
     userId: user._id
+    position: 0
     submitted: new Date
     kind: 'measure'
     risks: [risk1Id]
