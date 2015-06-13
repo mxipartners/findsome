@@ -18,6 +18,8 @@
   "Notifications": "Meldingen",
   "Open": "Open",
   "page_not_found": "Sorry, we konden geen pagina vinden op dit adres.",
+  "Please create a project or have another user add you to one of theirs":
+    "Maak een project of vraag een andere gebruiker u toe te voegen aan één van hun projecten",
   "Please provide a title": "Vul een titel in",
   "Please select at least one project member":
     "Selecteer ten minste één projectlid",
@@ -44,6 +46,7 @@
   "Title": "Titel",
   "title_placeholder": "Titel van uw %s",
   "Welcome!": "Welkom!",
+  "You have no projects": "U heeft geen projecten",
   "You need to add findings before you can add risks":
     "U moet bevindingen toevoegen voordat u risico's kan toevoegen",
   "You need to add risks before you can add measures":
