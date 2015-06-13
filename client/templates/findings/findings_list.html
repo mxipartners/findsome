@@ -1,0 +1,16 @@
+<template name="findingsList">
+  {{#if has_sources}}
+    {{#each findings}}
+      {{#if item_is_edited}}
+        {{> findingEdit}}
+      {{else}}
+        {{> item}}
+      {{/if}}
+    {{/each}}
+    {{> findingSubmit}}
+  {{else}}
+    <div class="jumbotron">
+      <p>{{_ "You need to add sources before you can add findings"}}.</p>
+    </div>
+  {{/if}}
+</template>

@@ -1,0 +1,10 @@
+<template name="sourcesList">
+  {{#each sources}}
+    {{#if item_is_edited}}
+      {{> sourceEdit}}
+    {{else}}
+      {{> item}}
+    {{/if}}
+  {{/each}}
+  {{> sourceSubmit}}
+</template>

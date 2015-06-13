@@ -29,62 +29,16 @@
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane fade" id="sources" aria-labelled-by="sources">
-        {{#each sources}}
-          {{#if item_is_edited}}
-            {{> sourceEdit}}
-          {{else}}
-            {{> item}}
-          {{/if}}
-        {{/each}}
-        {{> sourceSubmit}}
+        {{> sourcesList}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="findings" aria-labelled-by="findings">
-        {{#if has_sources}}
-          {{#each findings}}
-            {{#if item_is_edited}}
-              {{> findingEdit}}
-            {{else}}
-              {{> item}}
-            {{/if}}
-          {{/each}}
-          {{> findingSubmit}}
-        {{else}}
-          <div class="jumbotron">
-            <p>{{_ "You need to add sources before you can add findings"}}.</p>
-          </div>
-        {{/if}}
+        {{> findingsList}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="risks" aria-labelled-by="risks">
-        {{#if has_findings}}
-          {{#each risks}}
-            {{#if item_is_edited}}
-              {{> riskEdit}}
-            {{else}}
-              {{> item}}
-            {{/if}}
-          {{/each}}
-          {{> riskSubmit}}
-        {{else}}
-          <div class="jumbotron">
-            <p>{{_ "You need to add findings before you can add risks"}}.</p>
-          </div>
-        {{/if}}
+        {{> risksList}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="measures" aria-labelled-by="measures">
-        {{#if has_risks}}
-          {{#each measures}}
-            {{#if item_is_edited}}
-              {{> measureEdit}}
-            {{else}}
-              {{> item}}
-            {{/if}}
-          {{/each}}
-          {{> measureSubmit}}
-        {{else}}
-          <div class="jumbotron">
-            <p>{{_ "You need to add risks before you can add measures"}}.</p>
-          </div>
-        {{/if}}
+        {{> measuresList}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="report" aria-labelled-by="measures">
         {{> projectReport}}
