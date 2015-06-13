@@ -2,11 +2,11 @@ Router.configure
   layoutTemplate: 'layout'
   loadingTemplate: 'loading'
   notFoundTemplate: 'notFound'
-  waitOn: -> [Meteor.subscribe('projects'), Meteor.subscribe('notifications')]
+  waitOn: -> [Meteor.subscribe('projects'),
+              Meteor.subscribe('notifications'),
+              Meteor.subscribe('usernames')]
 
-Router.route '/projects/new',
-  name: 'projectNew'
-  waitOn: -> Meteor.subscribe 'usernames'
+Router.route '/projects/new', name: 'projectNew'
 
 Router.route '/projects/:_id',
   name: 'projectPage'
@@ -16,8 +16,7 @@ Router.route '/projects/:_id',
     [Meteor.subscribe('measures', projectId),
      Meteor.subscribe('risks', projectId),
      Meteor.subscribe('findings', projectId),
-     Meteor.subscribe('sources', projectId),
-     Meteor.subscribe('usernames')]
+     Meteor.subscribe('sources', projectId)]
 
 Router.route '/', name: 'projectsList'
 
