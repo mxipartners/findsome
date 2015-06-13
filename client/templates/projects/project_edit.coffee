@@ -44,6 +44,10 @@ Template.projectEdit.events
   'click .cancel': (e) -> stop_editing()
 
 
+Template.deleteProject.helpers
+  translated_kind: -> TAPi18n.__ this.kind
+
+
 Template.deleteProject.events
   'click .delete': (e) ->
     remove_project = =>
