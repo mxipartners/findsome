@@ -34,6 +34,17 @@ Accounts.onCreateUser (options, user) ->
     submitted: new Date
     kind: 'source'
   source2Id = Sources.insert source2
+  source3 =
+    title: "Drag and drop"
+    description: "You can reorder sources, but also findings, risks, and
+      measures, by drag and drop. This also changes the order of the items
+      in the report."
+    projectId: projectId
+    userId: user._id
+    position: 2
+    submitted: new Date
+    kind: 'source'
+  source3Id = Sources.insert source3
   finding1 =
     title: "SAD is outdated"
     description: "This is an example of a finding. The software architecture
