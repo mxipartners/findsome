@@ -41,6 +41,8 @@
   "Select sources": "Selectie van bronnen",
   "source": "bron",
   "Sources": "Bronnen",
+  "Sources, findings, risks, and measures can be reordered by drag and drop":
+    "Bronnen, bevindingen, risico's en maatregelen kunnen met drag en drop van volgorde worden veranderd",
   "Submit": "Voeg toe",
   "submitted_by": "Ingevoerd door <span class='author'>%s</span> op <span class='date'>%s</span>.",
   "Title": "Titel",

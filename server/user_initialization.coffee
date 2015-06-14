@@ -35,10 +35,8 @@ Accounts.onCreateUser (options, user) ->
     kind: 'source'
   source2Id = Sources.insert source2
   source3 =
-    title: "Drag and drop"
-    description: "You can reorder sources, but also findings, risks, and
-      measures, by drag and drop. This also changes the order of the items
-      in the report."
+    title: "Unit tests"
+    description: "The source code comes with unit tests."
     projectId: projectId
     userId: user._id
     position: 2
