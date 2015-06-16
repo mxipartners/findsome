@@ -18,3 +18,5 @@ tap:i18n-ui
 coffeescript
 mizzao:jquery-ui
 dsyko:jquery-ui-touch-punch
+sanjo:jasmine
+velocity:html-reporter
