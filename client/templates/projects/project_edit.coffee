@@ -6,7 +6,7 @@ Template.projectEdit.onRendered ->
     placeholder: TAPi18n.__ "Select project members"
 
 Template.projectEdit.helpers
-  usernames: -> Meteor.users.find()
+  usernames: -> Meteor.users.find {}, {sort: {username: 1}}
   userIsMember: ->
     project = Template.parentData()
     this._id in project.members
