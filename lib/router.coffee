@@ -7,8 +7,6 @@ Router.configure
               Meteor.subscribe('notifications'),
               Meteor.subscribe('usernames')]
 
-Router.route '/projects/new', name: 'projectNew'
-
 Router.route '/projects/:_id',
   name: 'projectPage'
   data: -> Projects.findOne this.params._id
@@ -19,8 +17,6 @@ Router.route '/projects/:_id',
      Meteor.subscribe('findings', projectId),
      Meteor.subscribe('sources', projectId),
      Meteor.subscribe('all_criteria')]
-
-Router.route '/checklists/new', name: 'checklistNew'
 
 Router.route '/checklists/:_id',
   name: 'checklistPage'
@@ -37,5 +33,4 @@ requireLogin = ->
   else
     this.render(if Meteor.loggingIn() then this.loadingTemplate else 'accessDenied')
 
-# Router.onBeforeAction 'dataNotFound', only: 'projectPage'
 Router.onBeforeAction requireLogin

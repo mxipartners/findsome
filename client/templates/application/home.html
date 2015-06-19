@@ -24,6 +24,7 @@
             <p>{{_ "Please create a project or have another user add you to one of theirs"}}.</p>
           </div>
         {{/each}}
+        {{> projectNew}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="checklists" aria-labelled-by="checklists">
         {{#each checklists}}
@@ -34,6 +35,7 @@
             <p>{{_ "Please create a checklist or have another user add you to one of theirs"}}.</p>
           </div>
         {{/each}}
+        {{> checklistNew}}
       </div>
     </div>
   </div>

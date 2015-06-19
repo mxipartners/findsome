@@ -13,16 +13,6 @@
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
           {{#if currentUser}}
-            <li>
-              <a href="{{pathFor 'projectNew'}}">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "New project"}}
-              </a>
-            </li>
-            <li>
-              <a href="{{pathFor 'checklistNew'}}">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "New checklist"}}
-              </a>
-            </li>
             <li class="dropdown">
               {{> notifications}}
             </li>
