@@ -31,7 +31,7 @@ Meteor.methods
       title: String
       description: String
       members: Array
-      checklists: Array
+      checklists: [String]
     errors = validateProject projectAttributes
     if errors.title
       throw new Meteor.Error('invalid-project', "You must set a title for your project")
