@@ -16,7 +16,8 @@ Template.findingEdit.helpers
     finding = Template.parentData()
     this._id in finding.sources
   project_criteria: ->
-    Criteria.find {checklistId: {$in: Projects.findOne(this.projectId).checklists}}
+    checklists = Projects.findOne(this.projectId).checklists or []
+    Criteria.find {checklistId: {$in: checklists}}
   criteriumIsSelected: ->
     finding = Template.parentData()
     this._id in (finding.criteria or [])

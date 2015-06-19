@@ -5,8 +5,6 @@ Template.findingSubmit.onCreated ->
 Template.findingSubmit.onRendered ->
   this.$(".source-select").select2
     placeholder: TAPi18n.__ "Select sources"
-  this.$(".criterium-select").select2
-    placeholder: TAPi18n.__ "Select criteria"
 
 
 Template.findingSubmit.helpers
@@ -14,8 +12,6 @@ Template.findingSubmit.helpers
   errorClass: (field) ->
     if Session.get('findingSubmitErrors')[field] then 'has-error' else ''
   sources: -> Sources.find()
-  project_criteria: ->
-    Criteria.find {checklistId: {$in: Projects.findOne(this._id).checklists}}
 
 
 Template.findingSubmit.events
@@ -49,3 +45,13 @@ Template.findingSubmit.events
       else
         $title.val('')
         $description.val('')
+
+
+Template.criteriaSelect.helpers
+  project_criteria: ->
+    Criteria.find {checklistId: {$in: this.checklists}}
+
+
+Template.criteriaSelect.onRendered ->
+  this.$(".criterium-select").select2
+    placeholder: TAPi18n.__ "Select criteria"
