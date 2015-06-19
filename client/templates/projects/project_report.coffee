@@ -7,6 +7,10 @@ Template.projectFindingsTable.helpers
   has_findings: -> Findings.find({projectId: this._id}).count() > 0
   findingSources: -> Sources.find {_id: {$in: this.sources}}
   findingCriteria: -> Criteria.find {_id: {$in: this.criteria}}
+  has_checklists: -> this.checklists and this.checklists.length > 0
+  project_has_checklists: ->
+    checklists = Template.parentData().checklists
+    checklists and checklists.length > 0
 
 Template.projectRisksTable.helpers
   risks: -> Risks.find {projectId: this._id}, {sort: {position: 1}}

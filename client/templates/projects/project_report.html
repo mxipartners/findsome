@@ -45,7 +45,9 @@
             <th>{{_ "Title"}}</th>
             <th>{{_ "Description"}}</th>
             <th>{{_ "Sources"}}</th>
-            <th>{{_ "Criteria"}}</th>
+            {{#if has_checklists}}
+              <th>{{_ "Criteria"}}</th>
+            {{/if}}
           </tr>
         </thead>
         <tbody>
@@ -54,7 +56,9 @@
               <td>{{title}}</td>
               <td>{{description}}</td>
               <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
-              <td>{{#each findingCriteria}}{{title}}<br>{{/each}}</td>
+              {{#if project_has_checklists}}
+                <td>{{#each findingCriteria}}{{title}}<br>{{/each}}</td>
+              {{/if}}
             </tr>
           {{/each}}
         </tbody>
