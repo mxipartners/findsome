@@ -1,3 +1,7 @@
+Template.projectChecklistsTables.helpers
+  checklists: -> Checklists.find {_id: {$in: this.checklists}}
+  criteria: -> Criteria.find {checklistId: this._id}, {sort: position: 1}
+
 Template.projectSourcesTable.helpers
   sources: -> Sources.find {projectId: this._id}, {sort: {position: 1}}
   has_sources: -> Sources.find({projectId: this._id}).count() > 0

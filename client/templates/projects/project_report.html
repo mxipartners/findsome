@@ -4,7 +4,32 @@
     {{> projectRisksTable}}
     {{> projectFindingsTable}}
     {{> projectSourcesTable}}
+    {{> projectChecklistsTables}}
   </div>
+</template>
+
+<template name="projectChecklistsTables">
+  {{#each checklists}}
+    <div class="grid-block">
+      <table class="table table-striped">
+        <caption>{{title}}</caption>
+        <thead>
+          <tr>
+            <th>{{_ "Title"}}</th>
+            <th>{{_ "Description"}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each criteria}}
+            <tr>
+              <td>{{title}}</td>
+              <td>{{description}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/each}}
 </template>
 
 <template name="projectSourcesTable">
