@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'projectsList'}}">Findsome</a>
+        <a class="navbar-brand" href="{{pathFor 'home'}}">Findsome</a>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
@@ -16,6 +16,11 @@
             <li>
               <a href="{{pathFor 'projectNew'}}">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "New project"}}
+              </a>
+            </li>
+            <li>
+              <a href="{{pathFor 'checklistNew'}}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "New checklist"}}
               </a>
             </li>
             <li class="dropdown">

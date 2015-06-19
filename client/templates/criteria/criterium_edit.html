@@ -1,0 +1,38 @@
+<template name="criteriumEdit">
+  <form name="criterium" class="item-form form">
+    {{> titleControl extendContext 'control_id' 'criterium_title'}}
+    {{> descriptionControl}}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+      {{#if hasNoFindings}}
+        <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteCriterium">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+        </a>
+      {{/if}}
+    </div>
+  </form>
+  {{> deleteCriterium}}
+</template>
+
+<template name="deleteCriterium">
+  <div class="modal fade" id="deleteCriterium" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{_ "delete_kind" translated_kind}}</h4>
+        </div>
+        <div class="modal-body">
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{_ "Cancel"}}</button>
+          <button type="button" class="btn btn-danger delete" data-dismiss="modal">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

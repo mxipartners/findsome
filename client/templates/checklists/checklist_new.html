@@ -1,0 +1,19 @@
+<template name="checklistNew">
+  <form name="checklist" class="main form page">
+    {{> titleControl control_id='checklist_title' title='' kind='checklist'}}
+    {{> descriptionControl control_id='checklist_description' description='' kind='checklist'}}
+    <div class="form-group {{errorClass 'owners'}}">
+      <div class="controls">
+        <label for="owners">{{_ "Checklist owners"}}</label>
+          <select name="owners" multiple="multiple" class="form-control owner-select">
+          {{#each usernames}}
+            <option selected="{{userIsCurrentUser}}" value="{{_id}}">{{username}}</option>
+          {{/each}}
+        </select>
+        <span class="help-block">{{errorMessage 'owners'}}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{_ "Submit"}}</button>
+    <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+  </form>
+</template>

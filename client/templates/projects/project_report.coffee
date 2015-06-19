@@ -6,6 +6,7 @@ Template.projectFindingsTable.helpers
   findings: -> Findings.find {projectId: this._id}, {sort: {position: 1}}
   has_findings: -> Findings.find({projectId: this._id}).count() > 0
   findingSources: -> Sources.find {_id: {$in: this.sources}}
+  findingCriteria: -> Criteria.find {_id: {$in: this.criteria}}
 
 Template.projectRisksTable.helpers
   risks: -> Risks.find {projectId: this._id}, {sort: {position: 1}}

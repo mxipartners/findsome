@@ -1,0 +1,40 @@
+<template name="home">
+  <div>
+    <div role="tabpanel">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+          <a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">
+            {{_ "Projects"}} <span class="badge">{{projects.count}}</span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#checklists" aria-controls="checklists" role="tab" data-toggle="tab">
+            {{_ "Checklists"}} <span class="badge">{{checklists.count}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade" id="projects" aria-labelled-by="projects">
+        {{#each projects}}
+          {{> projectItem extendContext 'projectItemIsOpen' false}}
+        {{else}}
+          <div class="jumbotron">
+            <h2>{{_ "You have no projects"}}</h2>
+            <p>{{_ "Please create a project or have another user add you to one of theirs"}}.</p>
+          </div>
+        {{/each}}
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="checklists" aria-labelled-by="checklists">
+        {{#each checklists}}
+          {{> checklistItem extendContext 'checklistItemIsOpen' false}}
+        {{else}}
+          <div class="jumbotron">
+            <h2>{{_ "You own no checklists"}}</h2>
+            <p>{{_ "Please create a checklist or have another user add you to one of theirs"}}.</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

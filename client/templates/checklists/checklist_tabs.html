@@ -1,0 +1,16 @@
+<template name="checklistTabs">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="#criteria" aria-controls="criteria" role="tab" data-toggle="tab">
+          {{_ "Criteria"}} <span class="badge">{{criteria_count}}</span>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade" id="criteria" aria-labelled-by="criteria">
+        {{> criteriaList}}
+      </div>
+    </div>
+  </div>
+</template>

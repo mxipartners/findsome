@@ -13,6 +13,18 @@
         <span class="help-block">{{errorMessage 'sources'}}</span>
       </div>
     </div>
+    {{#if project_criteria}}
+      <div class="form-group">
+        <div class="controls">
+          <label for="criteria">{{_ "Criteria"}}</label>
+          <select name="criteria" multiple="multiple" class="form-control criterium-select">
+            {{#each project_criteria}}
+              <option value="{{_id}}">{{title}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    {{/if}}
     <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "Submit"}}
     </button>

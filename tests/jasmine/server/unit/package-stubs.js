@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "2a3a029939f0127be96e27f5b9ef99af76a2166e"
+                  "value": "ce88eac00a20c98c78d84c4a927ac4057de325fa"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7209,7 +7209,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 1
+              "value": 0
             },
             "timeout": {
               "type": "constant",
@@ -7853,11 +7853,11 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "fd2e43cfdf592825e70fb1e575fce1c2c1d22e00"
+          "value": "0671ce96d3aef64d91173930b64942d518c6fb11"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
-          "value": "62089a1102443bc9d66473565dee5afae1e64be9"
+          "value": "463f6248b2a7462996c534886f6dbf18393d87b2"
         },
         "autoupdateVersionCordova": {
           "type": "constant",
@@ -11307,6 +11307,10 @@ var packageMetadata = {
                           "type": "constant",
                           "value": "Maatregelen"
                         },
+                        "New checklist": {
+                          "type": "constant",
+                          "value": "Nieuwe checklist"
+                        },
                         "New project": {
                           "type": "constant",
                           "value": "Nieuw project"
@@ -11327,6 +11331,10 @@ var packageMetadata = {
                           "type": "constant",
                           "value": "Sorry, we konden geen pagina vinden op dit adres."
                         },
+                        "Please create a checklist or have another user add you to one of theirs": {
+                          "type": "constant",
+                          "value": "Maak een checklist of vraag een andere gebruiker u toe te voegen aan één van hun checklists"
+                        },
                         "Please create a project or have another user add you to one of theirs": {
                           "type": "constant",
                           "value": "Maak een project of vraag een andere gebruiker u toe te voegen aan één van hun projecten"
@@ -11334,6 +11342,10 @@ var packageMetadata = {
                         "Please provide a title": {
                           "type": "constant",
                           "value": "Vul een titel in"
+                        },
+                        "Please select at least one checklist owner": {
+                          "type": "constant",
+                          "value": "Selecteer ten minste één checklist eigenaar"
                         },
                         "Please select at least one project member": {
                           "type": "constant",
@@ -11370,6 +11382,18 @@ var packageMetadata = {
                         "Risks": {
                           "type": "constant",
                           "value": "Risico's"
+                        },
+                        "Select checklists": {
+                          "type": "constant",
+                          "value": "Selectie van checklists"
+                        },
+                        "Select checklist owners": {
+                          "type": "constant",
+                          "value": "Selectie van checklist eigenaren"
+                        },
+                        "Select criteria": {
+                          "type": "constant",
+                          "value": "Selectie van criteria"
                         },
                         "Select findings": {
                           "type": "constant",
@@ -11438,6 +11462,10 @@ var packageMetadata = {
                         "You need to add sources before you can generate a report": {
                           "type": "constant",
                           "value": "U moet bronnen toevoegen voordat een rapport kan worden gemaakt"
+                        },
+                        "You own no checklists": {
+                          "type": "constant",
+                          "value": "U heeft geen checklists"
                         }
                       }
                     }
@@ -11479,11 +11507,11 @@ var packageMetadata = {
             },
             "pluralNotFound": {
               "type": "constant",
-              "value": "plural_not_found0.21654434385709465"
+              "value": "plural_not_found0.02027438674122095"
             },
             "contextNotFound": {
               "type": "constant",
-              "value": "context_not_found0.8909556462895125"
+              "value": "context_not_found0.5574270512443036"
             },
             "cookieExpirationTime": {
               "type": "undefined"
@@ -11619,6 +11647,10 @@ var packageMetadata = {
                       "type": "constant",
                       "value": "Maatregelen"
                     },
+                    "New checklist": {
+                      "type": "constant",
+                      "value": "Nieuwe checklist"
+                    },
                     "New project": {
                       "type": "constant",
                       "value": "Nieuw project"
@@ -11639,6 +11671,10 @@ var packageMetadata = {
                       "type": "constant",
                       "value": "Sorry, we konden geen pagina vinden op dit adres."
                     },
+                    "Please create a checklist or have another user add you to one of theirs": {
+                      "type": "constant",
+                      "value": "Maak een checklist of vraag een andere gebruiker u toe te voegen aan één van hun checklists"
+                    },
                     "Please create a project or have another user add you to one of theirs": {
                       "type": "constant",
                       "value": "Maak een project of vraag een andere gebruiker u toe te voegen aan één van hun projecten"
@@ -11646,6 +11682,10 @@ var packageMetadata = {
                     "Please provide a title": {
                       "type": "constant",
                       "value": "Vul een titel in"
+                    },
+                    "Please select at least one checklist owner": {
+                      "type": "constant",
+                      "value": "Selecteer ten minste één checklist eigenaar"
                     },
                     "Please select at least one project member": {
                       "type": "constant",
@@ -11682,6 +11722,18 @@ var packageMetadata = {
                     "Risks": {
                       "type": "constant",
                       "value": "Risico's"
+                    },
+                    "Select checklists": {
+                      "type": "constant",
+                      "value": "Selectie van checklists"
+                    },
+                    "Select checklist owners": {
+                      "type": "constant",
+                      "value": "Selectie van checklist eigenaren"
+                    },
+                    "Select criteria": {
+                      "type": "constant",
+                      "value": "Selectie van criteria"
                     },
                     "Select findings": {
                       "type": "constant",
@@ -11750,6 +11802,10 @@ var packageMetadata = {
                     "You need to add sources before you can generate a report": {
                       "type": "constant",
                       "value": "U moet bronnen toevoegen voordat een rapport kan worden gemaakt"
+                    },
+                    "You own no checklists": {
+                      "type": "constant",
+                      "value": "U heeft geen checklists"
                     }
                   }
                 }
@@ -12647,84 +12703,7 @@ var packageMetadata = {
                 },
                 "pid": {
                   "type": "constant",
-                  "value": 8988
-                },
-                "fout": {
-                  "type": "constant",
-                  "value": 39
-                },
-                "child": {
-                  "type": "object",
-                  "members": {
-                    "domain": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "signalCode": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "exitCode": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "pid": {
-                      "type": "constant",
-                      "value": 8988
-                    },
-                    "stdin": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "stdout": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "stderr": {
-                      "type": "null",
-                      "value": null
-                    },
-                    "stdio": {
-                      "type": "array"
-                    },
-                    "spawn": {
-                      "type": "function"
-                    },
-                    "kill": {
-                      "type": "function"
-                    },
-                    "ref": {
-                      "type": "function"
-                    },
-                    "unref": {
-                      "type": "function"
-                    },
-                    "setMaxListeners": {
-                      "type": "function"
-                    },
-                    "emit": {
-                      "type": "function"
-                    },
-                    "addListener": {
-                      "type": "function",
-                      "refID": 17
-                    },
-                    "on": {
-                      "ref": 17
-                    },
-                    "once": {
-                      "type": "function"
-                    },
-                    "removeListener": {
-                      "type": "function"
-                    },
-                    "removeAllListeners": {
-                      "type": "function"
-                    },
-                    "listeners": {
-                      "type": "function"
-                    }
-                  }
+                  "value": 989
                 },
                 "getTaskName": {
                   "type": "function"

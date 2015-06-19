@@ -12,6 +12,7 @@ Meteor.methods
       title: String
       description: String
       sources: Array
+      criteria: [String]
     user = Meteor.user()
     project = Projects.findOne findingAttributes.projectId
     if not project

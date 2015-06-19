@@ -1,0 +1,12 @@
+<template name="criteriaList">
+  <div class="sortable">
+    {{#each criteria}}
+      {{#if item_is_edited}}
+        {{> criteriumEdit}}
+      {{else}}
+        {{> item}}
+      {{/if}}
+    {{/each}}
+  </div>
+  {{> criteriumSubmit}}
+</template>

@@ -1,0 +1,10 @@
+<template name="checklistPage">
+  <div class="checklist-page page">
+    {{#if item_is_edited}}
+      {{> checklistEdit}}
+    {{else}}
+      {{> checklistItem extendContext 'checklistItemIsOpen' true}}
+    {{/if}}
+    {{> checklistTabs}}
+  </div>
+</template>

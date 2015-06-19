@@ -5,10 +5,13 @@ Template.projectNew.onCreated ->
 Template.projectNew.onRendered ->
   $(".member-select").select2
     placeholder: TAPi18n.__ "Select project members"
+  $(".checklist-select").select2
+    placeholder: TAPi18n.__ "Select checklists"
 
 
 Template.projectNew.helpers
-  usernames: -> Meteor.users.find()
+  usernames: -> Meteor.users.find {}, {sort: {username: 1}}
+  checklists: -> Checklists.find {}, {sort: {title: 1}}
   userIsCurrentUser: -> this._id == Meteor.userId()
   errorMessage: (field) -> Session.get('projectNewErrors')[field]
   errorClass: (field) ->
@@ -40,4 +43,4 @@ Template.projectNew.events
       else
         Router.go 'projectPage', {_id: result._id}
 
-  'click .cancel': (e) -> Router.go 'projectsList'
+  'click .cancel': (e) -> Router.go 'home'

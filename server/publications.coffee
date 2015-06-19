@@ -17,6 +17,16 @@ Meteor.publish 'sources', (projectId) ->
   check projectId, String
   Sources.find {projectId: projectId}
 
+Meteor.publish 'checklists', ->
+  Checklists.find {owners: this.userId}
+
+Meteor.publish 'all_criteria', ->
+  Criteria.find()
+
+Meteor.publish 'criteria', (checklistId) ->
+  check checklistId, String
+  Criteria.find {checklistId: checklistId}
+
 Meteor.publish 'notifications', ->
   Notifications.find {userId: this.userId}
 

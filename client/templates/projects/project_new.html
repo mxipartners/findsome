@@ -5,12 +5,22 @@
     <div class="form-group {{errorClass 'members'}}">
       <div class="controls">
         <label for="members">{{_ "Project members"}}</label>
-          <select name="members" multiple="multiple" class="form-control member-select">
+        <select name="members" multiple="multiple" class="form-control member-select">
           {{#each usernames}}
             <option selected="{{userIsCurrentUser}}" value="{{_id}}">{{username}}</option>
           {{/each}}
         </select>
         <span class="help-block">{{errorMessage 'members'}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label for="checklists">{{_ "Checklists"}}</label>
+        <select name="checklists" multiple="multiple" class="form-control checklist-select">
+          {{#each checklists}}
+            <option value="{{_id}}">{{title}}</option>
+          {{/each}}
+        </select>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">{{_ "Submit"}}</button>

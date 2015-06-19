@@ -45,6 +45,7 @@
             <th>{{_ "Title"}}</th>
             <th>{{_ "Description"}}</th>
             <th>{{_ "Sources"}}</th>
+            <th>{{_ "Criteria"}}</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@
               <td>{{title}}</td>
               <td>{{description}}</td>
               <td>{{#each findingSources}}{{title}}<br>{{/each}}</td>
+              <td>{{#each findingCriteria}}{{title}}<br>{{/each}}</td>
             </tr>
           {{/each}}
         </tbody>

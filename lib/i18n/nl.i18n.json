@@ -13,14 +13,19 @@
   "Mark all notifications as read": "Markeer alle meldingen als gelezen",
   "measure": "maatregel",
   "Measures": "Maatregelen",
+  "New checklist": "Nieuwe checklist",
   "New project": "Nieuw project",
   "No notifications": "Geen meldingen",
   "Notifications": "Meldingen",
   "Open": "Open",
   "page_not_found": "Sorry, we konden geen pagina vinden op dit adres.",
+  "Please create a checklist or have another user add you to one of theirs":
+    "Maak een checklist of vraag een andere gebruiker u toe te voegen aan één van hun checklists",
   "Please create a project or have another user add you to one of theirs":
     "Maak een project of vraag een andere gebruiker u toe te voegen aan één van hun projecten",
   "Please provide a title": "Vul een titel in",
+  "Please select at least one checklist owner":
+    "Selecteer ten minste één checklist eigenaar",
   "Please select at least one project member":
     "Selecteer ten minste één projectlid",
   "Please select one or more findings for the risk":
@@ -35,6 +40,9 @@
   "Report": "Rapport",
   "risk": "risico",
   "Risks": "Risico's",
+  "Select checklists": "Selectie van checklists",
+  "Select checklist owners": "Selectie van checklist eigenaren",
+  "Select criteria": "Selectie van criteria",
   "Select findings": "Selectie van bevindingen",
   "Select project members": "Selectie van projectleden",
   "Select risks": "Selectie van risico's",
@@ -56,5 +64,6 @@
   "You need to add sources before you can add findings":
     "U moet bronnen toevoegen voordat u bevindingen kan toevoegen",
   "You need to add sources before you can generate a report":
-    "U moet bronnen toevoegen voordat een rapport kan worden gemaakt"
+    "U moet bronnen toevoegen voordat een rapport kan worden gemaakt",
+  "You own no checklists": "U heeft geen checklists"
 }

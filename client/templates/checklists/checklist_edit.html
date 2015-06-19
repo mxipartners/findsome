@@ -1,0 +1,47 @@
+<template name="checklistEdit">
+  <form name="checklist" class="main form">
+    {{> titleControl extendContext 'control_id' 'checklist_title'}}
+    {{> descriptionControl extendContext 'control_id' 'checklist_description'}}
+    <div class="form-group {{errorClass 'owners'}}">
+      <div class="controls">
+        <label for="owners">{{_ "Checklist owners"}}</label>
+        <select name="owners" multiple="multiple" class="form-control owner-select">
+          {{#each usernames}}
+            <option selected="{{userIsOwner}}" value="{{_id}}">{{username}}</option>
+          {{/each}}
+        </select>
+        <span class="help-block">{{errorMessage 'owners'}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+      <a data-toggle="modal" class="btn btn-danger delete pull-right" href="#deleteChecklist">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+      </a>
+    </div>
+  </form>
+  {{>deleteChecklist}}
+</template>
+
+<template name="deleteChecklist">
+  <div class="modal fade" id="deleteChecklist" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{_ "delete_kind" translated_kind}}</h4>
+        </div>
+        <div class="modal-body">
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{_ "Cancel"}}</button>
+          <button type="button" class="btn btn-danger delete" data-dismiss="modal">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> {{_ "Delete"}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

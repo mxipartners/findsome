@@ -2,8 +2,10 @@ Template.findingEdit.onCreated ->
   Session.set 'findingEditErrors', {}
 
 Template.findingEdit.onRendered ->
-  $(".source-select").select2
+  this.$(".source-select").select2
     placeholder: TAPi18n.__ "Select sources"
+  this.$(".criterium-select").select2
+    placeholder: TAPi18n.__ "Select criteria"
 
 Template.findingEdit.helpers
   errorMessage: (field) -> Session.get('findingEditErrors')[field]
@@ -13,6 +15,11 @@ Template.findingEdit.helpers
   sourceIsSelected: ->
     finding = Template.parentData()
     this._id in finding.sources
+  project_criteria: ->
+    Criteria.find {checklistId: {$in: Projects.findOne(this.projectId).checklists}}
+  criteriumIsSelected: ->
+    finding = Template.parentData()
+    this._id in (finding.criteria or [])
   hasNoRisks: -> Risks.find({findings: this._id}).count() == 0
 
 Template.findingEdit.events
@@ -22,10 +29,12 @@ Template.findingEdit.events
     $title = $(e.target).find '[name=title]'
     $description = $(e.target).find '[name=description]'
     $sources = $(e.target).find '[name=sources]'
+    $criteria = $(e.target).find '[name=criteria]'
     findingProperties =
       title: $title.val()
       description: $description.val()
       sources: $sources.val()
+      criteria: $criteria.val()
 
     Session.set 'finding_title', {}
     Session.set 'findingEditErrors', {}

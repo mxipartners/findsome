@@ -1,0 +1,9 @@
+<template name="criteriumSubmit">
+  <form name="criterium" class="item-form form">
+    {{> titleControl control_id='criterium_title' title='' kind='criterium'}}
+    {{> descriptionControl description='' kind='criterium'}}
+    <button type="submit" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "Submit"}}
+    </button>
+  </form>
+</template>

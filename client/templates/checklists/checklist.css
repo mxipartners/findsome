@@ -1,0 +1,45 @@
+.checklist {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  position: relative;
+  opacity: 1; }
+  .checklist:before, .checklist:after {
+    content: "";
+    display: table; }
+  .checklist:after {
+    clear: both; }
+  .checklist:hover {
+    background-color: #fcfcff; }
+  .checklist.invisible {
+    opacity: 0; }
+  .checklist.instant {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
+  .checklist.animate{
+    -webkit-transition: all 300ms 0ms;
+    -moz-transition: all 300ms 0ms ease-in;
+    -o-transition: all 300ms 0ms ease-in;
+    transition: all 300ms 0ms ease-in; }
+  .checklist .checklist-content {
+    float: left; }
+    .checklist .checklist-content h3 {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 18px; }
+      .checklist .checklist-content h3 a {
+        display: inline-block;
+        margin-right: 5px; }
+      .checklist .checklist-content h3 span {
+        font-weight: normal;
+        font-size: 14px;
+        display: inline-block;
+        color: #aaaaaa; }
+    .checklist .checklist-content p {
+      margin: 0; }
+  .checklist .edit {
+    display: block;
+    float: right;
+    margin-top: 7px; }

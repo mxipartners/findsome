@@ -1,0 +1,45 @@
+.project {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  position: relative;
+  opacity: 1; }
+  .project:before, .project:after {
+    content: "";
+    display: table; }
+  .project:after {
+    clear: both; }
+  .project:hover {
+    background-color: #fcfcff; }
+  .project.invisible {
+    opacity: 0; }
+  .project.instant {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
+  .project.animate{
+    -webkit-transition: all 300ms 0ms;
+    -moz-transition: all 300ms 0ms ease-in;
+    -o-transition: all 300ms 0ms ease-in;
+    transition: all 300ms 0ms ease-in; }
+  .project .project-content {
+    float: left; }
+    .project .project-content h3 {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 18px; }
+      .project .project-content h3 a {
+        display: inline-block;
+        margin-right: 5px; }
+      .project .project-content h3 span {
+        font-weight: normal;
+        font-size: 14px;
+        display: inline-block;
+        color: #aaaaaa; }
+    .project .project-content p {
+      margin: 0; }
+  .project .edit {
+    display: block;
+    float: right;
+    margin-top: 7px; }
