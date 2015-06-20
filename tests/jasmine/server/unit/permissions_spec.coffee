@@ -9,6 +9,7 @@ describe 'A user, when added to a project', ->
     spyOn(Projects, 'findOne').and.returnValue(project)
     expect(ownsProjectItem('id', {projectId: 'projectId'})).toBe true
 
+
 describe 'A user, when not added to a project', ->
 
   project = {members: ['another id']}
@@ -19,6 +20,7 @@ describe 'A user, when not added to a project', ->
   it "doesn't own items in the project", ->
     spyOn(Projects, 'findOne').and.returnValue(project)
     expect(ownsProjectItem('id', {projectId: 'projectId'})).toBe false
+
 
 describe 'A user, when added to a checklist', ->
 
@@ -31,7 +33,8 @@ describe 'A user, when added to a checklist', ->
     spyOn(Checklists, 'findOne').and.returnValue(checklist)
     expect(ownsCriterium('id', {checklistId: 'checklistId'})).toBe true
 
-decribe 'A user, when not added to a checklist', ->
+
+describe 'A user, when not added to a checklist', ->
 
   checklist = {owners: ['another id']}
 
