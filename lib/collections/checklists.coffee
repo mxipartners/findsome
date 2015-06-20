@@ -16,14 +16,6 @@ Checklists.deny
       errors = validateChecklist modifier.$set
       errors.title or errors.owners
 
-@validateChecklist = (checklist) ->
-  errors = {}
-  if not checklist.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  if not checklist.owners
-    errors.owners = TAPi18n.__ "Please select at least one checklist owner"
-  return errors
-
 Meteor.methods
   checklistInsert: (checklistAttributes) ->
     check Meteor.userId(), String

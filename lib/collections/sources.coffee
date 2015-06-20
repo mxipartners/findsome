@@ -7,12 +7,6 @@ Sources.allow
 Sources.deny
   remove: (userId, source) -> Findings.find({sources: source._id}).count() > 0
 
-@validateSource = (source) ->
-  errors = {}
-  if not source.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  return errors
-
 Meteor.methods
   sourceInsert: (sourceAttributes) ->
     check this.userId, String

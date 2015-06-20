@@ -1,0 +1,1 @@
+@validateCriterium = (criterium) -> validateItem criterium

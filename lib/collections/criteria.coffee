@@ -7,12 +7,6 @@ Criteria.allow
 Criteria.deny
   remove: (userId, criterium) -> Findings.find({criteria: criterium._id}).count() > 0
 
-@validateCriterium = (criterium) ->
-  errors = {}
-  if not criterium.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  return errors
-
 Meteor.methods
   criteriumInsert: (criteriumAttributes) ->
     check this.userId, String

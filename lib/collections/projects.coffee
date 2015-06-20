@@ -16,14 +16,6 @@ Projects.deny
       errors = validateProject modifier.$set
       errors.title or errors.members
 
-@validateProject = (project) ->
-  errors = {}
-  if not project.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  if not project.members
-    errors.members = TAPi18n.__ "Please select at least one project member"
-  return errors
-
 Meteor.methods
   projectInsert: (projectAttributes) ->
     check Meteor.userId(), String

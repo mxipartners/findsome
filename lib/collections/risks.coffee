@@ -27,11 +27,3 @@ Meteor.methods
     text = user.username + ' added risk ' + risk.title + ' to ' + project.title
     createNotification(member, user._id, risk.projectId, text) for member in project.members
     return risk._id
-
-@validateRisk = (risk) ->
-  errors = {}
-  if not risk.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  if not risk.findings
-    errors.findings = TAPi18n.__ "Please select one or more findings for the risk"
-  return errors

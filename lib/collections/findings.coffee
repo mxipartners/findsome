@@ -28,11 +28,3 @@ Meteor.methods
     text = user.username + ' added finding ' + finding.title + ' to ' + project.title
     createNotification(member, user._id, finding.projectId, text) for member in project.members
     return finding._id
-
-@validateFinding = (finding) ->
-  errors = {}
-  if not finding.title
-    errors.title = TAPi18n.__ "Please provide a title"
-  if not finding.sources
-    errors.sources = TAPi18n.__ "Please select one or more sources for the finding"
-  return errors
