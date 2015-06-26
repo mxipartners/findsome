@@ -25,7 +25,7 @@ Template.findingSubmit.events
     finding =
       title: $title.val()
       description: $description.val()
-      sources: $sources.val()
+      sources: $sources.val() or []
       criteria: $criteria.val() or []
       projectId: template.data._id
 
@@ -49,7 +49,7 @@ Template.findingSubmit.events
 
 Template.criteriaSelect.helpers
   project_criteria: ->
-    Criteria.find {checklistId: {$in: this.checklists}}
+    Criteria.find {checklistId: {$in: this.checklists or []}}
 
 
 Template.criteriaSelect.onRendered ->

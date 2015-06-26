@@ -34,8 +34,8 @@ Template.findingEdit.events
     findingProperties =
       title: $title.val()
       description: $description.val()
-      sources: $sources.val()
-      criteria: $criteria.val()
+      sources: $sources.val() or []
+      criteria: $criteria.val() or []
 
     Session.set 'finding_title', {}
     Session.set 'findingEditErrors', {}
