@@ -1,1 +1,0 @@
-@validateSource = (source) -> validateItem source
