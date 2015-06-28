@@ -25,7 +25,7 @@ Template.riskEdit.events
     riskProperties =
       title: $title.val()
       description: $description.val()
-      findings: $findings.val()
+      findings: $findings.val() or []
 
     Session.set 'risk_title', {}
     Session.set 'riskEditErrors', {}

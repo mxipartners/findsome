@@ -21,7 +21,7 @@ Template.riskSubmit.events
     risk =
       title: $title.val()
       description: $description.val()
-      findings: $findings.val()
+      findings: $findings.val() or []
       projectId: template.data._id
 
     Session.set 'riskSubmitErrors', {}

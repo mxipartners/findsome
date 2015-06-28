@@ -22,7 +22,7 @@ Template.checklistNew.events
     checklist =
       title: $(e.target).find('[name=title]').val()
       description: $(e.target).find('[name=description]').val()
-      owners: $(e.target).find('[name=owners]').val()
+      owners: $(e.target).find('[name=owners]').val() or []
 
     Session.set 'checklist_title', {}
     Session.set 'checklistNewErrors', {}

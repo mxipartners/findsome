@@ -28,8 +28,8 @@ Template.projectEdit.events
     projectProperties =
       title: $(e.target).find('[name=title]').val()
       description: $(e.target).find('[name=description]').val()
-      members: $(e.target).find('[name=members]').val()
-      checklists: $(e.target).find('[name=checklists]').val()
+      members: $(e.target).find('[name=members]').val() or []
+      checklists: $(e.target).find('[name=checklists]').val() or []
 
     Session.set 'project_title', {}
     Session.set 'projectEditErrors', {}

@@ -23,7 +23,7 @@ Template.measureEdit.events
     measureProperties =
       title: $title.val()
       description: $description.val()
-      risks: $risks.val()
+      risks: $risks.val() or []
 
     Session.set 'measure_title', {}
     Session.set 'measureEditErrors', {}

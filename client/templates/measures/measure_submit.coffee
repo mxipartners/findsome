@@ -21,7 +21,7 @@ Template.measureSubmit.events
     measure =
       title: $title.val()
       description: $description.val()
-      risks: $risks.val()
+      risks: $risks.val() or []
       projectId: template.data._id
 
     Session.set 'measureSubmitErrors', {}

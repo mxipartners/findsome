@@ -25,7 +25,7 @@ Template.projectNew.events
     project =
       title: $(e.target).find('[name=title]').val()
       description: $(e.target).find('[name=description]').val()
-      members: $(e.target).find('[name=members]').val()
+      members: $(e.target).find('[name=members]').val() or []
       checklists: $(e.target).find('[name=checklists]').val() or []
 
     Session.set 'project_title', {}
