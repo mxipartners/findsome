@@ -1,6 +1,5 @@
 Template.errors.helpers
-  errors: ->
-    Errors.find()
+  errors: -> Errors.find()
 
 Template.error.onRendered ->
   error = this.data
