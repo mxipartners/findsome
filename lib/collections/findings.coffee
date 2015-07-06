@@ -20,8 +20,10 @@ Meteor.methods
     finding = _.extend findingAttributes,
       userId: user._id
       submitted: new Date()
-      position: Findings.find({projectId: findingAttributes.projectId}).count()
+      position: 0
       kind: 'finding'
+    # Update the positions of the existing findings
+    Findings.update({_id: f._id}, {$set: {position: f.position+1}}) for f in Findings.find({projectId: project._id}).fetch()
     # Create the finding, save the id
     finding._id = Findings.insert finding
     # Now create a notification, informing the project members a finding has been added

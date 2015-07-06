@@ -1,4 +1,5 @@
 <template name="criteriaList">
+  {{> criteriumSubmit}}
   <div class="sortable">
     {{#each criteria}}
       {{#if item_is_edited}}
@@ -8,5 +9,4 @@
       {{/if}}
     {{/each}}
   </div>
-  {{> criteriumSubmit}}
 </template>

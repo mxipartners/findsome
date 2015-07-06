@@ -19,8 +19,10 @@ Meteor.methods
     measure = _.extend measureAttributes,
       userId: user._id
       submitted: new Date()
-      position: Measures.find({projectId: measureAttributes.projectId}).count()
+      position: 0
       kind: 'measure'
+    # Update the positions of the existing measures
+    Measures.update({_id: m._id}, {$set: {position: m.position+1}}) for m in Measures.find({projectId: project._id}).fetch()
     # Create the measure, save the id
     measure._id = Measures.insert measure
     # Now create a notification, informing the project members a measure has been added

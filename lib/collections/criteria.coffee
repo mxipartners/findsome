@@ -14,15 +14,17 @@ Meteor.methods
       checklistId: String
       title: String
       description: String
-    user = Meteor.user();
+    user = Meteor.user()
     checklist = Checklists.findOne criteriumAttributes.checklistId
     if not checklist
       throw new Meteor.Error('invalid-criterium', 'You must add a criterium to a checklist')
     criterium = _.extend criteriumAttributes,
       userId: user._id
       submitted: new Date()
-      position: Criteria.find({checklistId: criteriumAttributes.checklistId}).count()
+      position: 0
       kind: 'criterium'
+    # Update the positions of the existing criteria
+    Criteria.update({_id: c._id}, {$set: {position: c.position+1}}) for c in Criteria.find({checklistId: checklist._id}).fetch()
     # Create the criterium, save the id
     criterium._id = Criteria.insert criterium
     # Now create a notification, informing the checklist owners a criterium has been added

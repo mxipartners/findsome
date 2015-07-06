@@ -14,15 +14,17 @@ Meteor.methods
       projectId: String
       title: String
       description: String
-    user = Meteor.user();
+    user = Meteor.user()
     project = Projects.findOne sourceAttributes.projectId
     if not project
       throw new Meteor.Error('invalid-source', 'You must add a source to a project')
     source = _.extend sourceAttributes,
       userId: user._id
       submitted: new Date()
-      position: Sources.find({projectId: sourceAttributes.projectId}).count()
+      position: 0
       kind: 'source'
+    # Update the positions of the existing sources
+    Sources.update({_id: s._id}, {$set: {position: s.position+1}}) for s in Sources.find({projectId: project._id}).fetch()
     # Create the source, save the id
     source._id = Sources.insert source
     # Now create a notification, informing the project members a source has been added

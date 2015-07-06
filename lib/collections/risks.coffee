@@ -19,8 +19,10 @@ Meteor.methods
     risk = _.extend riskAttributes,
       userId: user._id
       submitted: new Date()
-      position: Risks.find({projectId: riskAttributes.projectId}).count()
+      position: 0
       kind: 'risk'
+    # Update the positions of the existing risks
+    Risks.update({_id: r._id}, {$set: {position: r.position+1}}) for r in Risks.find({projectId: project._id}).fetch()
     # Create the risk, save the id
     risk._id = Risks.insert risk
     # Now create a notification, informing the project members a risk has been added

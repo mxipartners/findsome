@@ -1,5 +1,6 @@
 <template name="measuresList">
   {{#if has_risks}}
+    {{> measureSubmit}}
     <div class="sortable">
       {{#each measures}}
         {{#if item_is_edited}}
@@ -9,7 +10,6 @@
         {{/if}}
       {{/each}}
     </div>
-    {{> measureSubmit}}
   {{else}}
     <div class="jumbotron">
       <p>{{_ "You need to add risks before you can add measures"}}.</p>

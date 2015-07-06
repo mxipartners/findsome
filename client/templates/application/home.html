@@ -16,6 +16,7 @@
     </div>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane fade" id="projects" aria-labelled-by="projects">
+        {{> projectNew}}
         {{#each projects}}
           {{> projectItem extendContext 'projectItemIsOpen' false}}
         {{else}}
@@ -24,9 +25,9 @@
             <p>{{_ "Please create a project or have another user add you to one of theirs"}}.</p>
           </div>
         {{/each}}
-        {{> projectNew}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="checklists" aria-labelled-by="checklists">
+        {{> checklistNew}}
         {{#each checklists}}
           {{> checklistItem extendContext 'checklistItemIsOpen' false}}
         {{else}}
@@ -35,7 +36,6 @@
             <p>{{_ "Please create a checklist or have another user add you to one of theirs"}}.</p>
           </div>
         {{/each}}
-        {{> checklistNew}}
       </div>
     </div>
   </div>

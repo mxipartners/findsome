@@ -1,5 +1,6 @@
 <template name="risksList">
   {{#if has_findings}}
+    {{> riskSubmit}}
     <div class="sortable">
       {{#each risks}}
         {{#if item_is_edited}}
@@ -9,7 +10,6 @@
         {{/if}}
       {{/each}}
     </div>
-    {{> riskSubmit}}
   {{else}}
     <div class="jumbotron">
       <p>{{_ "You need to add findings before you can add risks"}}.</p>
