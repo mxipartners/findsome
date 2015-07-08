@@ -1,7 +1,7 @@
 @validateMeasure = (measure) ->
   check measure, Match.ObjectIncluding
     risks: [String]
-  errors = validateProjectItem measure
+  errors = validateItem measure
   if measure.risks.length == 0
     if Meteor.isServer
       throw new Meteor.Error('invalid-measure', 'You must add one or more risks to the measure')

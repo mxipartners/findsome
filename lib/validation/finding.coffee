@@ -2,7 +2,7 @@
   check finding, Match.ObjectIncluding
     sources: [String]
     criteria: [String]
-  errors = validateProjectItem finding
+  errors = validateItem finding
   if finding.sources.length == 0
     if Meteor.isServer
       throw new Meteor.Error('invalid-finding', 'You must add one or more sources to the finding')

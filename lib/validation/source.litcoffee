@@ -1,4 +1,4 @@
-Validating a `source` is equal to validating a project item; it has a mandatory
-title and project id, and an optional description.
+Validating a `source` is equal to validating an item; it has a mandatory
+title, and an optional description.
 
-    @validateSource = (item) -> validateProjectItem item
+    @validateSource = (item) -> validateItem item

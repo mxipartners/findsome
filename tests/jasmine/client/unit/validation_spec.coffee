@@ -23,27 +23,6 @@ describe 'An item', ->
     expect( -> validateItem({title: 'Title', 'description': 10})).toThrowError Match.Error
 
 
-describe 'A project item', ->
-
-  it 'is valid when it has a project id and is a valid item', ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
-    expect(validateProjectItem({title: 'Title', projectId: 'id'})).toEqual {}
-
-  it 'is invalid when it has an empty title', ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
-    expect(validateProjectItem({title: '', projectId: 'id'})).toEqual title_error
-
-  it 'is invalid when it has no project id', ->
-    expect( -> validateProjectItem({title: 'Title'})).toThrowError Match.Error
-
-  it 'is invalid when the project id is not a string', ->
-    expect( -> validateProjectItem({title: 'Title', projectId: 10})).toThrowError Match.Error
-
-  it "is invalid when the project id doesn't match a project", ->
-    spyOn(Projects, 'findOne').and.returnValue(undefined)
-    expect( -> validateProjectItem({title: 'Title', projectId: 'id'})).toThrowError Meteor.Error
-
-
 describe 'A project', ->
 
   beforeEach ->
@@ -83,10 +62,8 @@ describe 'A project', ->
 describe 'A source', ->
 
   beforeEach ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.source =
       title: 'Title'
-      projectId: 'id'
 
   it 'is valid when it has a title and a project id', ->
     expect(validateSource(this.source)).toEqual {}
@@ -99,12 +76,10 @@ describe 'A source', ->
 describe 'A finding', ->
 
   beforeEach ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.finding =
       title: 'Title'
       sources: ['Dummy source']
       criteria: ['Dummy criterium']
-      projectId: 'id'
 
   it 'is valid when it has a title and at least one source', ->
     expect(validateFinding(this.finding)).toEqual {}
@@ -137,11 +112,9 @@ describe 'A finding', ->
 describe 'A risk', ->
 
   beforeEach ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.risk =
       title: 'Title'
       findings: ['Dummy finding']
-      projectId: 'id'
 
   it 'is valid when it has a title, a project id, and at least one finding', ->
     expect(validateRisk(this.risk)).toEqual {}
@@ -170,11 +143,9 @@ describe 'A risk', ->
 describe 'A measure', ->
 
   beforeEach ->
-    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.measure =
       title: 'Title'
       risks: ['Dummy risk']
-      projectId: 'id'
 
   it 'is valid when it has a title and at least one risk', ->
     expect(validateMeasure(this.measure)).toEqual {}
@@ -198,27 +169,6 @@ describe 'A measure', ->
   it 'is invalid when the risks are not an array of strings', ->
     this.measure.risks = []
     expect( => validateMeasure(this.risk)).toThrowError Match.Error
-
-
-describe 'A checklist item', ->
-
-  it 'is valid when it has a checklist id and is a valid item', ->
-    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
-    expect(validateChecklistItem({title: 'Title', checklistId: 'id'})).toEqual {}
-
-  it 'is invalid when it has an empty title', ->
-    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
-    expect(validateChecklistItem({title: '', checklistId: 'id'})).toEqual title_error
-
-  it 'is invalid when it has no checklist id', ->
-    expect( -> validateChecklistItem({title: 'Title'})).toThrowError Match.Error
-
-  it 'is invalid when the checklist id is not a string', ->
-    expect( -> validateChecklistItem({title: 'Title', checklistId: 10})).toThrowError Match.Error
-
-  it "is invalid when the checklist id doesn't match a checklist", ->
-    spyOn(Checklists, 'findOne').and.returnValue(undefined)
-    expect( -> validateChecklistItem({title: 'Title', checklistId: 'id'})).toThrowError Meteor.Error
 
 
 describe 'A checklist', ->
@@ -249,10 +199,8 @@ describe 'A checklist', ->
 describe 'A criterium', ->
 
   beforeEach ->
-    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
     this.criterium =
       title: 'Title'
-      checklistId: 'id'
 
   it 'is valid when it has a title', ->
     expect(validateCriterium(this.criterium)).toEqual {}

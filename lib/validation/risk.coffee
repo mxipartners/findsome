@@ -1,7 +1,7 @@
 @validateRisk = (risk) ->
   check risk, Match.ObjectIncluding
     findings: [String]
-  errors = validateProjectItem risk
+  errors = validateItem risk
   if risk.findings.length == 0
     if Meteor.isServer
       throw new Meteor.Error('invalid-risk', 'You must add one or more findings to the risk')
