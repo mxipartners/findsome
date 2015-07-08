@@ -7,25 +7,19 @@ Risks.allow
 Meteor.methods
   riskInsert: (riskAttributes) ->
     check this.userId, String
-    check riskAttributes,
-      projectId: String
-      title: String
-      description: String
-      findings: Array
+    validateRisk riskAttributes
     user = Meteor.user()
-    project = Projects.findOne riskAttributes.projectId
-    if not project
-      throw new Meteor.Error('invalid-risk', 'You must add a risk to a project')
     risk = _.extend riskAttributes,
       userId: user._id
       submitted: new Date()
       position: 0
       kind: 'risk'
     # Update the positions of the existing risks
-    Risks.update({_id: r._id}, {$set: {position: r.position+1}}) for r in Risks.find({projectId: project._id}).fetch()
+    Risks.update({_id: r._id}, {$set: {position: r.position+1}}) for r in Risks.find({projectId: risk.projectId}).fetch()
     # Create the risk, save the id
     risk._id = Risks.insert risk
     # Now create a notification, informing the project members a risk has been added
+    project = Projects.findOne risk.projectId
     text = user.username + ' added risk ' + risk.title + ' to ' + project.title
     createNotification(member, user._id, risk.projectId, text) for member in project.members
     return risk._id

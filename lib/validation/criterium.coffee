@@ -1,1 +1,1 @@
-@validateCriterium = (criterium) -> validateItem criterium
+@validateCriterium = (item) -> validateChecklistItem item

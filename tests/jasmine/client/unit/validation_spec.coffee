@@ -8,16 +8,40 @@ describe 'An item', ->
     expect(validateItem({title: 'Title'})).toEqual {}
 
   it 'is valid when it has a title and a description', ->
-    expect(validateItem({title: 'Title', 'description': 'Description'}))
+    expect(validateItem({title: 'Title', 'description': 'Description'})).toEqual {}
 
-  it 'is invalid when it has no title', ->
+  it 'is invalid when it has an empty title', ->
     expect(validateItem({title: ''})).toEqual title_error
 
+  it 'is invalid when it had no title', ->
+    expect( -> validateItem({})).toThrowError Match.Error
+
   it 'is invalid when the title is not a string', ->
-    expect(validateItem, {title: 10}).toThrowError Match.Error
+    expect( -> validateItem({title: 10})).toThrowError Match.Error
 
   it 'is invalid when the description is not a string', ->
-    expect(validateItem, {title: 'Title', 'description': 10}).toThrowError Match.Error
+    expect( -> validateItem({title: 'Title', 'description': 10})).toThrowError Match.Error
+
+
+describe 'A project item', ->
+
+  it 'is valid when it has a project id and is a valid item', ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
+    expect(validateProjectItem({title: 'Title', projectId: 'id'})).toEqual {}
+
+  it 'is invalid when it has an empty title', ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
+    expect(validateProjectItem({title: '', projectId: 'id'})).toEqual title_error
+
+  it 'is invalid when it has no project id', ->
+    expect( -> validateProjectItem({title: 'Title'})).toThrowError Match.Error
+
+  it 'is invalid when the project id is not a string', ->
+    expect( -> validateProjectItem({title: 'Title', projectId: 10})).toThrowError Match.Error
+
+  it "is invalid when the project id doesn't match a project", ->
+    spyOn(Projects, 'findOne').and.returnValue(undefined)
+    expect( -> validateProjectItem({title: 'Title', projectId: 'id'})).toThrowError Meteor.Error
 
 
 describe 'A project', ->
@@ -49,28 +73,38 @@ describe 'A project', ->
 
   it 'is invalid when the members is not an array of strings', ->
     this.project.members = [10]
-    expect(validateItem, this.project).toThrowError Match.Error
+    expect( -> validateItem(this.project)).toThrowError Match.Error
 
   it 'is invalid when the checklists is not an array of strings', ->
     this.project.checklists = [10]
-    expect(validateItem, this.project).toThrowError Match.Error
+    expect( -> validateItem(this.project)).toThrowError Match.Error
 
 
 describe 'A source', ->
 
-  it 'is valid when it has a title', ->
-    expect(validateSource({title: 'Title'})).toEqual {}
+  beforeEach ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
+    this.source =
+      title: 'Title'
+      projectId: 'id'
+
+  it 'is valid when it has a title and a project id', ->
+    expect(validateSource(this.source)).toEqual {}
 
   it 'is invalid when it has no title', ->
-    expect(validateSource({title: ''})).toEqual title_error
+    this.source.title = ''
+    expect(validateSource(this.source)).toEqual title_error
 
 
 describe 'A finding', ->
 
   beforeEach ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.finding =
       title: 'Title'
       sources: ['Dummy source']
+      criteria: ['Dummy criterium']
+      projectId: 'id'
 
   it 'is valid when it has a title and at least one source', ->
     expect(validateFinding(this.finding)).toEqual {}
@@ -85,22 +119,31 @@ describe 'A finding', ->
       sources: jasmine.any(String)
 
   it 'is invalid when it has no title and no sources', ->
-    expect(validateFinding({title: '', sources: []})).toEqual
+    this.finding.title = ''
+    this.finding.sources = []
+    expect(validateFinding(this.finding)).toEqual
       title: jasmine.any(String)
       sources: jasmine.any(String)
 
-  it 'is invalid when the members are not an array of strings', ->
-    expect(validateFinding, {title: 'Title', sources: [10]}).toThrowError Match.Error
+  it 'is invalid when the sources are not an array of strings', ->
+    this.finding.sources = [10]
+    expect( => validateFinding(this.finding)).toThrowError Match.Error
+
+  it 'is invalid when the criteria are not an array of strings', ->
+    this.finding.criteria = [10]
+    expect( => validateFinding(this.finding)).toThrowError Match.Error
 
 
 describe 'A risk', ->
 
   beforeEach ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.risk =
       title: 'Title'
       findings: ['Dummy finding']
+      projectId: 'id'
 
-  it 'is valid when it has a title and at least one finding', ->
+  it 'is valid when it has a title, a project id, and at least one finding', ->
     expect(validateRisk(this.risk)).toEqual {}
 
   it 'is invalid when it has no title', ->
@@ -113,20 +156,25 @@ describe 'A risk', ->
       findings: jasmine.any(String)
 
   it 'is invalid when it has no title and no findings', ->
-    expect(validateRisk({title: '', findings: []})).toEqual
+    this.risk.title = ''
+    this.risk.findings = []
+    expect(validateRisk(this.risk)).toEqual
       title: jasmine.any(String)
       findings: jasmine.any(String)
 
   it 'is invalid when the findings are not an array of strings', ->
-    expect(validateRisk, {title: 'Title', findings: [10]}).toThrowError Match.Error
+    this.risk.findings = [10]
+    expect( => validateRisk(this.risk)).toThrowError Match.Error
 
 
 describe 'A measure', ->
 
   beforeEach ->
+    spyOn(Projects, 'findOne').and.returnValue({_id: 'id'})
     this.measure =
       title: 'Title'
       risks: ['Dummy risk']
+      projectId: 'id'
 
   it 'is valid when it has a title and at least one risk', ->
     expect(validateMeasure(this.measure)).toEqual {}
@@ -141,12 +189,36 @@ describe 'A measure', ->
       risks: jasmine.any(String)
 
   it 'is invalid when it has no title and no risks', ->
-    expect(validateMeasure({title: '', risks: []})).toEqual
+    this.measure.title = ''
+    this.measure.risks = []
+    expect(validateMeasure(this.measure)).toEqual
       title: jasmine.any(String)
       risks: jasmine.any(String)
 
   it 'is invalid when the risks are not an array of strings', ->
-    expect(validateMeasure, {title: 'Title', risks: [10]}).toThrowError Match.Error
+    this.measure.risks = []
+    expect( => validateMeasure(this.risk)).toThrowError Match.Error
+
+
+describe 'A checklist item', ->
+
+  it 'is valid when it has a checklist id and is a valid item', ->
+    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
+    expect(validateChecklistItem({title: 'Title', checklistId: 'id'})).toEqual {}
+
+  it 'is invalid when it has an empty title', ->
+    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
+    expect(validateChecklistItem({title: '', checklistId: 'id'})).toEqual title_error
+
+  it 'is invalid when it has no checklist id', ->
+    expect( -> validateChecklistItem({title: 'Title'})).toThrowError Match.Error
+
+  it 'is invalid when the checklist id is not a string', ->
+    expect( -> validateChecklistItem({title: 'Title', checklistId: 10})).toThrowError Match.Error
+
+  it "is invalid when the checklist id doesn't match a checklist", ->
+    spyOn(Checklists, 'findOne').and.returnValue(undefined)
+    expect( -> validateChecklistItem({title: 'Title', checklistId: 'id'})).toThrowError Meteor.Error
 
 
 describe 'A checklist', ->
@@ -176,8 +248,15 @@ describe 'A checklist', ->
 
 describe 'A criterium', ->
 
+  beforeEach ->
+    spyOn(Checklists, 'findOne').and.returnValue({_id: 'id'})
+    this.criterium =
+      title: 'Title'
+      checklistId: 'id'
+
   it 'is valid when it has a title', ->
-    expect(validateCriterium({title: 'Title'})).toEqual {}
+    expect(validateCriterium(this.criterium)).toEqual {}
 
   it 'is invalid when it has no title', ->
-    expect(validateCriterium({title: ''})).toEqual title_error
+    this.criterium.title = ''
+    expect(validateCriterium(this.criterium)).toEqual title_error

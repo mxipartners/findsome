@@ -10,24 +10,19 @@ Sources.deny
 Meteor.methods
   sourceInsert: (sourceAttributes) ->
     check this.userId, String
-    check sourceAttributes,
-      projectId: String
-      title: String
-      description: String
+    validateSource sourceAttributes
     user = Meteor.user()
-    project = Projects.findOne sourceAttributes.projectId
-    if not project
-      throw new Meteor.Error('invalid-source', 'You must add a source to a project')
     source = _.extend sourceAttributes,
       userId: user._id
       submitted: new Date()
       position: 0
       kind: 'source'
     # Update the positions of the existing sources
-    Sources.update({_id: s._id}, {$set: {position: s.position+1}}) for s in Sources.find({projectId: project._id}).fetch()
+    Sources.update({_id: s._id}, {$set: {position: s.position+1}}) for s in Sources.find({projectId: source.projectId}).fetch()
     # Create the source, save the id
     source._id = Sources.insert source
     # Now create a notification, informing the project members a source has been added
+    project = Projects.findOne source.projectId
     text = user.username + ' added source ' + source.title + ' to ' + project.title
     createNotification(member, user._id, source.projectId, text) for member in project.members
     return source._id
