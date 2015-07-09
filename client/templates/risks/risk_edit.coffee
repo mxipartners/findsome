@@ -1,7 +1,7 @@
 Template.riskEdit.onCreated -> Session.set 'riskEditErrors', {}
 
 Template.riskEdit.onRendered ->
-  $(".finding-select").select2
+  this.$(".finding-select").select2
     placeholder: TAPi18n.__ "Select findings"
 
 Template.riskEdit.helpers

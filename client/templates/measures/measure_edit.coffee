@@ -1,7 +1,7 @@
 Template.measureEdit.onCreated -> Session.set 'measureEditErrors', {}
 
 Template.measureEdit.onRendered ->
-  $(".risk-select").select2
+  this.$(".risk-select").select2
     placeholder: TAPi18n.__ "Select risks"
 
 Template.measureEdit.helpers
