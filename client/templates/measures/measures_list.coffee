@@ -1,6 +1,7 @@
 Template.measuresList.helpers
-  measures: -> Measures.find {projectId: this._id}, {sort: {position: 1}}
-  has_risks: -> Risks.find({projectId: this._id}).count() > 0
+  measures: -> Measures.find {}, {sort: {position: 1}}
+  has_risks: -> Risks.find().count() > 0
+  submitting: -> Session.get('kindSubmitting') == 'measure' or Measures.find().count() == 0
 
 Template.measuresList.onRendered ->
   options = _.extend drag_and_drop_options,

@@ -3,20 +3,27 @@
     <div role="tabpanel">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation">
-          <a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">
+          <a href="#project" aria-controls="projects" role="tab" data-toggle="tab">
             {{_ "Projects"}} <span class="badge">{{projects.count}}</span>
           </a>
         </li>
         <li role="presentation">
-          <a href="#checklists" aria-controls="checklists" role="tab" data-toggle="tab">
+          <a href="#checklist" aria-controls="checklists" role="tab" data-toggle="tab">
             {{_ "Checklists"}} <span class="badge">{{checklists.count}}</span>
           </a>
+        </li>
+        <li class="pull-right">
+          <button class="btn btn-primary add-kind">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "add_kind" translated_kind}}
+          </button>
         </li>
       </ul>
     </div>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade" id="projects" aria-labelled-by="projects">
-        {{> projectNew}}
+      <div role="tabpanel" class="tab-pane fade" id="project" aria-labelled-by="projects">
+        {{#if kind_submitting 'project'}}
+          {{> projectNew}}
+        {{/if}}
         {{#each projects}}
           {{> projectItem extendContext 'projectItemIsOpen' false}}
         {{else}}
@@ -26,13 +33,15 @@
           </div>
         {{/each}}
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="checklists" aria-labelled-by="checklists">
-        {{> checklistNew}}
+      <div role="tabpanel" class="tab-pane fade" id="checklist" aria-labelled-by="checklists">
+        {{#if kind_submitting 'checklist'}}
+          {{> checklistNew}}
+        {{/if}}
         {{#each checklists}}
           {{> checklistItem extendContext 'checklistItemIsOpen' false}}
         {{else}}
           <div class="jumbotron">
-            <h2>{{_ "You own no checklists"}}</h2>
+            <h2>{{_ "You have no checklists"}}</h2>
             <p>{{_ "Please create a checklist or have another user add you to one of theirs"}}.</p>
           </div>
         {{/each}}

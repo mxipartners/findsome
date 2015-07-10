@@ -1,6 +1,8 @@
 <template name="findingsList">
   {{#if has_sources}}
-    {{> findingSubmit}}
+    {{#if submitting}}
+      {{> findingSubmit}}
+    {{/if}}
     <div class="sortable">
       {{#each findings}}
         {{#if item_is_edited}}

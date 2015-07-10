@@ -1,3 +1,6 @@
+Template.criteriumSubmit.helpers
+  has_criteria: -> Criteria.find().count() > 0
+
 Template.criteriumSubmit.events
   'submit form': (e, template) ->
     e.preventDefault()
@@ -21,3 +24,5 @@ Template.criteriumSubmit.events
       else
         $title.val('')
         $description.val('')
+
+  'click .cancel': (e) -> stop_submitting()

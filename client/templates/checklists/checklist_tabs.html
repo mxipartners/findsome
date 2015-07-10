@@ -2,13 +2,18 @@
   <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation">
-        <a href="#criteria" aria-controls="criteria" role="tab" data-toggle="tab">
+        <a href="#criterium" aria-controls="criteria" role="tab" data-toggle="tab">
           {{_ "Criteria"}} <span class="badge">{{criteria_count}}</span>
         </a>
       </li>
+      <li class="pull-right">
+        <button class="btn btn-primary add-kind">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "add_kind" translated_kind}}
+        </button>
+      </li>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade" id="criteria" aria-labelled-by="criteria">
+      <div role="tabpanel" class="tab-pane fade" id="criterium" aria-labelled-by="criteria">
         {{> criteriaList}}
       </div>
     </div>

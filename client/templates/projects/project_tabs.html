@@ -2,22 +2,22 @@
   <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation">
-        <a href="#sources" aria-controls="sources" role="tab" data-toggle="tab">
+        <a href="#source" aria-controls="sources" role="tab" data-toggle="tab">
           {{_ "Sources"}} <span class="badge">{{sources_count}}</span>
         </a>
       </li>
       <li role="presentation">
-        <a href="#findings" aria-controls="findings" role="tab" data-toggle="tab">
+        <a href="#finding" aria-controls="findings" role="tab" data-toggle="tab">
           {{_ "Findings"}} <span class="badge">{{findings_count}}</span>
         </a>
       </li>
       <li role="presentation">
-        <a href="#risks" aria-controls="risks" role="tab" data-toggle="tab">
+        <a href="#risk" aria-controls="risks" role="tab" data-toggle="tab">
           {{_ "Risks"}} <span class="badge">{{risks_count}}</span>
         </a>
       </li>
       <li role="presentation">
-        <a href="#measures" aria-controls="measures" role="tab" data-toggle="tab">
+        <a href="#measure" aria-controls="measures" role="tab" data-toggle="tab">
           {{_ "Measures"}} <span class="badge">{{measures_count}}</span>
         </a>
       </li>
@@ -26,18 +26,25 @@
           {{_ "Report"}}
         </a>
       </li>
+      {{#if can_add_item}}
+        <li class="pull-right">
+          <button class="btn btn-primary add-kind">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "add_kind" translated_kind}}
+          </button>
+        </li>
+      {{/if}}
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade" id="sources" aria-labelled-by="sources">
+      <div role="tabpanel" class="tab-pane fade" id="source" aria-labelled-by="sources">
         {{> sourcesList}}
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="findings" aria-labelled-by="findings">
+      <div role="tabpanel" class="tab-pane fade" id="finding" aria-labelled-by="findings">
         {{> findingsList}}
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="risks" aria-labelled-by="risks">
+      <div role="tabpanel" class="tab-pane fade" id="risk" aria-labelled-by="risks">
         {{> risksList}}
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="measures" aria-labelled-by="measures">
+      <div role="tabpanel" class="tab-pane fade" id="measure" aria-labelled-by="measures">
         {{> measuresList}}
       </div>
       <div role="tabpanel" class="tab-pane fade" id="report" aria-labelled-by="measures">

@@ -1,6 +1,8 @@
 <template name="measuresList">
   {{#if has_risks}}
-    {{> measureSubmit}}
+    {{#if submitting}}
+      {{> measureSubmit}}
+    {{/if}}
     <div class="sortable">
       {{#each measures}}
         {{#if item_is_edited}}

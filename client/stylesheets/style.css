@@ -25,6 +25,10 @@ html, body {
 #spinner {
   height: 300px; }
 
+.add-kind {
+  margin-right: 10px; 
+}
+
 .dropdown-menu span {
   display: block;
   padding: 3px 20px;

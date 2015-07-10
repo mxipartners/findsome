@@ -10,6 +10,7 @@ Template.riskSubmit.helpers
   errorClass: (field) ->
     if Session.get('riskSubmitErrors')[field] then 'has-error' else ''
   findings: -> Findings.find()
+  has_risks: -> Risks.find().count() > 0
 
 Template.riskSubmit.events
   'submit form': (e, template) ->
@@ -40,3 +41,5 @@ Template.riskSubmit.events
       else
         $title.val('')
         $description.val('')
+
+  'click .cancel': (e) -> stop_submitting()

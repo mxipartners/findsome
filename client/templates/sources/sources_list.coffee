@@ -1,5 +1,6 @@
 Template.sourcesList.helpers
-  sources: -> Sources.find {projectId: this._id}, {sort: {position: 1}}
+  sources: -> Sources.find {}, {sort: {position: 1}}
+  submitting: -> Session.get('kindSubmitting') == 'source' or Sources.find().count() == 0
 
 Template.sourcesList.onRendered ->
   options = _.extend drag_and_drop_options,

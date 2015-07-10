@@ -1,5 +1,7 @@
 <template name="sourcesList">
-  {{> sourceSubmit}}
+  {{#if submitting}}
+    {{> sourceSubmit}}
+  {{/if}}
   <div class="sortable">
     {{#each sources}}
       {{#if item_is_edited}}

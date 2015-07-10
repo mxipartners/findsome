@@ -1,5 +1,6 @@
 Template.criteriaList.helpers
-  criteria: -> Criteria.find {checklistId: this._id}, {sort: {position: 1}}
+  criteria: -> Criteria.find {}, {sort: {position: 1}}
+  submitting: -> Session.get('kindSubmitting') == 'criterium' or Criteria.find().count() == 0
 
 Template.criteriaList.onRendered ->
   options = _.extend drag_and_drop_options,

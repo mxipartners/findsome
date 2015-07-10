@@ -9,7 +9,7 @@ Template.measureSubmit.helpers
   errorClass: (field) ->
     if Session.get('measureSubmitErrors')[field] then 'has-error' else ''
   risks: -> Risks.find()
-
+  has_measures: -> Measures.find().count() > 0
 
 Template.measureSubmit.events
   'submit form': (e, template) ->
@@ -40,3 +40,5 @@ Template.measureSubmit.events
       else
         $title.val('')
         $description.val('')
+
+  'click .cancel': (e) -> stop_submitting()

@@ -1,4 +1,5 @@
 {
+  "add_kind": "Add %s",
   "delete_kind": "Delete %s?",
   "description_placeholder": "Describe your %s",
   "item_added_notification": "%s added %s %s to %s",

@@ -1,3 +1,6 @@
+Template.sourceSubmit.helpers
+  has_sources: -> Sources.find().count() > 0
+
 Template.sourceSubmit.events
   'submit form': (e, template) ->
     e.preventDefault()
@@ -21,3 +24,5 @@ Template.sourceSubmit.events
       else
         $title.val('')
         $description.val('')
+
+  'click .cancel': (e) -> stop_submitting()

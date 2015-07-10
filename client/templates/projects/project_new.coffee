@@ -42,6 +42,7 @@ Template.projectNew.events
       if error
         throwError error.reason
       else
+        stop_submitting()
         Router.go 'projectPage', {_id: result._id}
 
-  'click .cancel': (e) -> Router.go 'home'
+  'click .cancel': (e) -> stop_submitting()

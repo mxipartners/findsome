@@ -40,4 +40,4 @@ Template.checklistNew.events
       else
         Router.go 'checklistPage', {_id: result._id}
 
-  'click .cancel': (e) -> Router.go 'home'
+  'click .cancel': (e) -> stop_submitting()

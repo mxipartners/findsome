@@ -1,4 +1,5 @@
 {
+  "add_kind": "Voeg %s toe",
   "Cancel": "Annuleren",
   "Delete": "Verwijder",
   "delete_kind": "Verwijder %s?",
@@ -65,5 +66,5 @@
     "U moet bronnen toevoegen voordat u bevindingen kan toevoegen",
   "You need to add sources before you can generate a report":
     "U moet bronnen toevoegen voordat een rapport kan worden gemaakt",
-  "You own no checklists": "U heeft geen checklists"
+  "You have no checklists": "U heeft geen checklists"
 }

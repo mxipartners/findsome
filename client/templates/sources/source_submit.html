@@ -2,8 +2,9 @@
   <form name="source" class="item-form form">
     {{> titleControl control_id='source_title' title='' kind='source'}}
     {{> descriptionControl description='' kind='source'}}
-    <button type="submit" class="btn btn-primary">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{_ "Submit"}}
-    </button>
+    <button type="submit" class="btn btn-primary submit">{{_ "OK"}}</button>
+    {{#if has_sources}}
+      <button type="button" class="btn btn-default cancel">{{_ "Cancel"}}</button>
+    {{/if}}
   </form>
 </template>

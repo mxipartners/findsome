@@ -1,6 +1,8 @@
 <template name="risksList">
   {{#if has_findings}}
-    {{> riskSubmit}}
+    {{#if submitting}}
+      {{> riskSubmit}}
+    {{/if}}
     <div class="sortable">
       {{#each risks}}
         {{#if item_is_edited}}

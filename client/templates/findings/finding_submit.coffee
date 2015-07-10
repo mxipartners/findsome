@@ -12,6 +12,7 @@ Template.findingSubmit.helpers
   errorClass: (field) ->
     if Session.get('findingSubmitErrors')[field] then 'has-error' else ''
   sources: -> Sources.find()
+  has_findings: -> Findings.find().count() > 0
 
 
 Template.findingSubmit.events
@@ -45,6 +46,8 @@ Template.findingSubmit.events
       else
         $title.val('')
         $description.val('')
+
+  'click .cancel': (e) -> stop_submitting()
 
 
 Template.criteriaSelect.helpers

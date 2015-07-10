@@ -1,6 +1,7 @@
 Template.risksList.helpers
-  risks: -> Risks.find {projectId: this._id}, {sort: {position: 1}}
-  has_findings: -> Findings.find({projectId: this._id}).count() > 0
+  risks: -> Risks.find {}, {sort: {position: 1}}
+  has_findings: -> Findings.find().count() > 0
+  submitting: -> Session.get('kindSubmitting') == 'risk' or Risks.find().count() == 0
 
 Template.risksList.onRendered ->
   options = _.extend drag_and_drop_options,
