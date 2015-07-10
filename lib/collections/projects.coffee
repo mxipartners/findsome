@@ -19,16 +19,7 @@ Projects.deny
 Meteor.methods
   projectInsert: (projectAttributes) ->
     check Meteor.userId(), String
-    check projectAttributes,
-      title: String
-      description: String
-      members: Array
-      checklists: [String]
-    errors = validateProject projectAttributes
-    if errors.title
-      throw new Meteor.Error('invalid-project', "You must set a title for your project")
-    if errors.members
-      throw new Meteor.Error('invalid-project', "You must select as least one project member")
+    validateProject projectAttributes
     user = Meteor.user()
     project = _.extend projectAttributes,
       userId: user._id
