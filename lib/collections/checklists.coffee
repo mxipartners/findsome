@@ -19,15 +19,7 @@ Checklists.deny
 Meteor.methods
   checklistInsert: (checklistAttributes) ->
     check Meteor.userId(), String
-    check checklistAttributes,
-      title: String
-      description: String
-      owners: Array
-    errors = validateChecklist checklistAttributes
-    if errors.title
-      throw new Meteor.Error('invalid-checklist', "You must set a title for your checklist")
-    if errors.owners
-      throw new Meteor.Error('invalid-checklist', "You must select as least one checklist owner")
+    validateChecklist checklistAttributes
     user = Meteor.user()
     checklist = _.extend checklistAttributes,
       userId: user._id
